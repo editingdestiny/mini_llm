@@ -1,0 +1,5508 @@
+{
+  "token_to_id": {
+    "<pad>": 0,
+    "<unk>": 1,
+    "<bos>": 2,
+    "<eos>": 3,
+    ",": 4,
+    "-": 5,
+    ".": 6,
+    "</w>": 7,
+    "A": 8,
+    "B": 9,
+    "C": 10,
+    "D": 11,
+    "E": 12,
+    "F": 13,
+    "G": 14,
+    "I": 15,
+    "L": 16,
+    "M": 17,
+    "N": 18,
+    "O": 19,
+    "P": 20,
+    "Q": 21,
+    "R": 22,
+    "S": 23,
+    "T": 24,
+    "V": 25,
+    "W": 26,
+    "a": 27,
+    "b": 28,
+    "c": 29,
+    "d": 30,
+    "e": 31,
+    "f": 32,
+    "g": 33,
+    "h": 34,
+    "i": 35,
+    "j": 36,
+    "k": 37,
+    "l": 38,
+    "m": 39,
+    "n": 40,
+    "o": 41,
+    "p": 42,
+    "q": 43,
+    "r": 44,
+    "s": 45,
+    "t": 46,
+    "u": 47,
+    "v": 48,
+    "w": 49,
+    "x": 50,
+    "y": 51,
+    "z": 52,
+    "‑": 53,
+    "—": 54,
+    "’": 55,
+    "in": 56,
+    "e</w>": 57,
+    "s</w>": 58,
+    "an": 59,
+    "d</w>": 60,
+    "re": 61,
+    "on": 62,
+    "ti": 63,
+    "er": 64,
+    "en": 65,
+    "or": 66,
+    ",</w>": 67,
+    "t</w>": 68,
+    "al": 69,
+    ".</w>": 70,
+    "y</w>": 71,
+    "ed</w>": 72,
+    "g</w>": 73,
+    "st": 74,
+    "he</w>": 75,
+    "it": 76,
+    "ar": 77,
+    "and</w>": 78,
+    "ing</w>": 79,
+    "at": 80,
+    "s,</w>": 81,
+    "ro": 82,
+    "al</w>": 83,
+    "s.</w>": 84,
+    "The</w>": 85,
+    "ic": 86,
+    "is": 87,
+    "o</w>": 88,
+    "ec": 89,
+    "co": 90,
+    "es</w>": 91,
+    "on</w>": 92,
+    "men": 93,
+    "ac": 94,
+    "su": 95,
+    "to</w>": 96,
+    "anc": 97,
+    "lo": 98,
+    "h</w>": 99,
+    "un": 100,
+    "er</w>": 101,
+    "of": 102,
+    "de": 103,
+    "ol": 104,
+    "se": 105,
+    "ve": 106,
+    "tr": 107,
+    "ig": 108,
+    "ag": 109,
+    "mp": 110,
+    "or</w>": 111,
+    "qu": 112,
+    "ap": 113,
+    "th": 114,
+    "ur": 115,
+    "ex": 116,
+    "ment": 117,
+    "por": 118,
+    "in</w>": 119,
+    "mar": 120,
+    "as": 121,
+    "a</w>": 122,
+    "et": 123,
+    "of</w>": 124,
+    "k</w>": 125,
+    "ation": 126,
+    "sh": 127,
+    "inve": 128,
+    "cre": 129,
+    "int": 130,
+    "ly</w>": 131,
+    "m</w>": 132,
+    "ity</w>": 133,
+    "invest": 134,
+    "ris": 135,
+    "ance</w>": 136,
+    "ul": 137,
+    "mark": 138,
+    "ital</w>": 139,
+    "ab": 140,
+    "pro": 141,
+    "ie": 142,
+    "il": 143,
+    "ad": 144,
+    "uc": 145,
+    "cap": 146,
+    "man": 147,
+    "ate</w>": 148,
+    "fin": 149,
+    "en</w>": 150,
+    "per": 151,
+    "capital</w>": 152,
+    "ors</w>": 153,
+    "ain": 154,
+    "cred": 155,
+    "ate": 156,
+    "ial</w>": 157,
+    "ne": 158,
+    "exp": 159,
+    "financ": 160,
+    "ban": 161,
+    "comp": 162,
+    "sp": 163,
+    "fun": 164,
+    "port": 165,
+    "wh": 166,
+    "ch": 167,
+    "manag": 168,
+    "low": 169,
+    "for": 170,
+    "ou": 171,
+    "le": 172,
+    "com": 173,
+    "ing": 174,
+    "ign": 175,
+    "si": 176,
+    "credit</w>": 177,
+    "y,</w>": 178,
+    "qui": 179,
+    "pol": 180,
+    "ding</w>": 181,
+    "risk</w>": 182,
+    "am": 183,
+    "polic": 184,
+    "an</w>": 185,
+    "ds</w>": 186,
+    "ect": 187,
+    "ations</w>": 188,
+    "ir": 189,
+    "oc": 190,
+    "duc": 191,
+    "reg": 192,
+    "pr": 193,
+    "li": 194,
+    "w</w>": 195,
+    "financial</w>": 196,
+    "ments</w>": 197,
+    "inf": 198,
+    "gr": 199,
+    "bon": 200,
+    "its</w>": 201,
+    "over": 202,
+    "he": 203,
+    "asset</w>": 204,
+    "market": 205,
+    "ons</w>": 206,
+    "mo": 207,
+    "with</w>": 208,
+    "ter": 209,
+    "af": 210,
+    "ang": 211,
+    "fic": 212,
+    "regul": 213,
+    "op": 214,
+    "om": 215,
+    "e.</w>": 216,
+    "portf": 217,
+    "portfoli": 218,
+    "vol": 219,
+    "ut": 220,
+    "regulat": 221,
+    "iv": 222,
+    "tran": 223,
+    "ss</w>": 224,
+    "interest</w>": 225,
+    "cur": 226,
+    "infl": 227,
+    "alu": 228,
+    "investors</w>": 229,
+    "policy</w>": 230,
+    "up": 231,
+    "cy</w>": 232,
+    "hig": 233,
+    "pric": 234,
+    "ha": 235,
+    "ce</w>": 236,
+    "imp": 237,
+    "ory</w>": 238,
+    "bank</w>": 239,
+    "ear": 240,
+    "ce": 241,
+    "valu": 242,
+    "quid": 243,
+    "po": 244,
+    "risk": 245,
+    "gy</w>": 246,
+    "bal": 247,
+    "l</w>": 248,
+    "bank": 249,
+    "’s</w>": 250,
+    "ay": 251,
+    "y.</w>": 252,
+    "porate</w>": 253,
+    "we": 254,
+    "strate": 255,
+    "uct": 256,
+    "cl": 257,
+    "can</w>": 258,
+    "ning": 259,
+    "expect": 260,
+    "by</w>": 261,
+    "compan": 262,
+    "yie": 263,
+    "yiel": 264,
+    "te": 265,
+    "war": 266,
+    "from</w>": 267,
+    "cost": 268,
+    "be": 269,
+    "ind": 270,
+    "fir": 271,
+    "form": 272,
+    "balance</w>": 273,
+    "age</w>": 274,
+    "manage": 275,
+    "prov": 276,
+    "overn": 277,
+    "alloc": 278,
+    "ant</w>": 279,
+    "new</w>": 280,
+    "issu": 281,
+    "ies,</w>": 282,
+    "tral</w>": 283,
+    "earning": 284,
+    "rati": 285,
+    "d.</w>": 286,
+    "d,</w>": 287,
+    "incre": 288,
+    "to": 289,
+    "funding</w>": 290,
+    "me": 291,
+    "rem": 292,
+    "curren": 293,
+    "under": 294,
+    "ack": 295,
+    "pl": 296,
+    "liquid": 297,
+    "io": 298,
+    "govern": 299,
+    "act</w>": 300,
+    "ally</w>": 301,
+    "corporate</w>": 302,
+    "investment</w>": 303,
+    "ic</w>": 304,
+    "markets</w>": 305,
+    "central</w>": 306,
+    "earnings</w>": 307,
+    "anal": 308,
+    "analy": 309,
+    "marg": 310,
+    "bu": 311,
+    "fund</w>": 312,
+    "ward</w>": 313,
+    "ment.</w>": 314,
+    "ue</w>": 315,
+    "cr": 316,
+    "if": 317,
+    "iden": 318,
+    "pay": 319,
+    "ary</w>": 320,
+    "-ter": 321,
+    "-term</w>": 322,
+    "deb": 323,
+    "bonds</w>": 324,
+    "lever": 325,
+    "asset": 326,
+    "trans": 327,
+    "urn": 328,
+    "fut": 329,
+    "grow": 330,
+    "strateg": 331,
+    "struct": 332,
+    "clu": 333,
+    "ds,</w>": 334,
+    "often</w>": 335,
+    "have</w>": 336,
+    "spec": 337,
+    "about</w>": 338,
+    "after</w>": 339,
+    "yield</w>": 340,
+    "ks</w>": 341,
+    "ign</w>": 342,
+    "able</w>": 343,
+    "dg": 344,
+    "currency</w>": 345,
+    "using</w>": 346,
+    "equity</w>": 347,
+    "uring</w>": 348,
+    "perio": 349,
+    "debt</w>": 350,
+    "cond": 351,
+    "lar": 352,
+    "sy": 353,
+    "comm": 354,
+    "rate</w>": 355,
+    "mode": 356,
+    "quen": 357,
+    "dat": 358,
+    "bo": 359,
+    "fac": 360,
+    "which</w>": 361,
+    "In": 362,
+    "while</w>": 363,
+    "dis": 364,
+    "ers</w>": 365,
+    "consu": 366,
+    "consumer</w>": 367,
+    "al,</w>": 368,
+    "ws</w>": 369,
+    "rates</w>": 370,
+    "margin": 371,
+    "indic": 372,
+    "forming</w>": 373,
+    "sheet": 374,
+    "throu": 375,
+    "throug": 376,
+    "through</w>": 377,
+    "par": 378,
+    "long": 379,
+    "back": 380,
+    "igital</w>": 381,
+    "rev": 382,
+    "abilit": 383,
+    "again": 384,
+    "against</w>": 385,
+    "allocation</w>": 386,
+    "larg": 387,
+    "merg": 388,
+    "stain": 389,
+    "off": 390,
+    "rate": 391,
+    "adop": 392,
+    "future</w>": 393,
+    "ls</w>": 394,
+    "high": 395,
+    "ies.</w>": 396,
+    "ts</w>": 397,
+    "econom": 398,
+    "economic</w>": 399,
+    "uncer": 400,
+    "uncert": 401,
+    "non": 402,
+    "flows</w>": 403,
+    "inclu": 404,
+    "including</w>": 405,
+    "ke": 406,
+    "key</w>": 407,
+    "data</w>": 408,
+    "inflation</w>": 409,
+    "ra": 410,
+    "expectations</w>": 411,
+    "company</w>": 412,
+    "hol": 413,
+    "close": 414,
+    "bond</w>": 415,
+    "ir</w>": 416,
+    "techn": 417,
+    "technolo": 418,
+    "fa": 419,
+    "exchang": 420,
+    "exchange</w>": 421,
+    "volatility</w>": 422,
+    "scr": 423,
+    "firm</w>": 424,
+    "hedg": 425,
+    "performing</w>": 426,
+    "loan": 427,
+    "pres": 428,
+    "bank’s</w>": 429,
+    "id</w>": 430,
+    "tim": 431,
+    "wor": 432,
+    "management.</w>": 433,
+    "do": 434,
+    "dow": 435,
+    "down": 436,
+    "expan": 437,
+    "liquidity</w>": 438,
+    "ses.</w>": 439,
+    "condition": 440,
+    "ht</w>": 441,
+    "pen": 442,
+    "adj": 443,
+    "adju": 444,
+    "e-": 445,
+    "signific": 446,
+    "significant</w>": 447,
+    "governance</w>": 448,
+    "commit": 449,
+    "sustain": 450,
+    "weal": 451,
+    "wealth</w>": 452,
+    "ss": 453,
+    "models</w>": 454,
+    "fre": 455,
+    "fe": 456,
+    "used</w>": 457,
+    "metric": 458,
+    "borro": 459,
+    "uncertaint": 460,
+    "provi": 461,
+    "merging</w>": 462,
+    "go": 463,
+    "id": 464,
+    "mul": 465,
+    "return": 466,
+    "across</w>": 467,
+    "liquidit": 468,
+    "liquidity,</w>": 469,
+    "risk,</w>": 470,
+    "impact</w>": 471,
+    "ence</w>": 472,
+    "rates,</w>": 473,
+    "costs,</w>": 474,
+    "When</w>": 475,
+    "pu": 476,
+    "leve": 477,
+    "foc": 478,
+    "firm": 479,
+    "ing,</w>": 480,
+    "contin": 481,
+    "soc": 482,
+    "atten": 483,
+    "attention</w>": 484,
+    "growth": 485,
+    "lobal</w>": 486,
+    "ma": 487,
+    "Ne": 488,
+    "News</w>": 489,
+    "rel": 490,
+    "ow</w>": 491,
+    "they</w>": 492,
+    "inflation": 493,
+    "exce": 494,
+    "ann": 495,
+    "announ": 496,
+    "enhance</w>": 497,
+    "sharehol": 498,
+    "increased</w>": 499,
+    "exposure</w>": 500,
+    "technology</w>": 501,
+    "toward</w>": 502,
+    "up</w>": 503,
+    "investors.</w>": 504,
+    "due</w>": 505,
+    "was</w>": 506,
+    "strong</w>": 507,
+    "deman": 508,
+    "shif": 509,
+    "investment": 510,
+    "ds.</w>": 511,
+    "revenu": 512,
+    "es.</w>": 513,
+    "introduced</w>": 514,
+    "stric": 515,
+    "requirement": 516,
+    "forward</w>": 517,
+    "loans</w>": 518,
+    "increase": 519,
+    "ividen": 520,
+    "ividend</w>": 521,
+    "amid</w>": 522,
+    "optim": 523,
+    "deal</w>": 524,
+    "king</w>": 525,
+    "sovere": 526,
+    "long-term</w>": 527,
+    "reduced</w>": 528,
+    "expanded</w>": 529,
+    "digital</w>": 530,
+    "dr": 531,
+    "during</w>": 532,
+    "period</w>": 533,
+    "volatilit": 534,
+    "streng": 535,
+    "tigh": 536,
+    "conditions.</w>": 537,
+    "stan": 538,
+    "profit": 539,
+    "profitabilit": 540,
+    "pension</w>": 541,
+    "adjusted</w>": 542,
+    "syner": 543,
+    "ders.</w>": 544,
+    "committe": 545,
+    "committee</w>": 546,
+    "revie": 547,
+    "serv": 548,
+    "active</w>": 549,
+    "issued</w>": 550,
+    "energy</w>": 551,
+    "proj": 552,
+    "payment</w>": 553,
+    "transac": 554,
+    "ze</w>": 555,
+    "assets.</w>": 556,
+    "turn": 557,
+    "au": 558,
+    "control": 559,
+    "ti-": 560,
+    "adopted</w>": 561,
+    "high-": 562,
+    "frequen": 563,
+    "management</w>": 564,
+    "issuance</w>": 565,
+    "sw": 566,
+    "nar": 567,
+    "metrics</w>": 568,
+    "gain": 569,
+    "monetary</w>": 570,
+    "strategic</w>": 571,
+    "gag": 572,
+    "cash</w>": 573,
+    "macroeconomic</w>": 574,
+    "ref": 575,
+    "non-": 576,
+    "emerging</w>": 577,
+    "markets.</w>": 578,
+    "goti": 579,
+    "coven": 580,
+    "adv": 581,
+    "shor": 582,
+    "short": 583,
+    "short-term</w>": 584,
+    "ib": 585,
+    "based</w>": 586,
+    "ge": 587,
+    "Fin": 588,
+    "syste": 589,
+    "betwe": 590,
+    "between</w>": 591,
+    "ments,</w>": 592,
+    "atives,</w>": 593,
+    "frame": 594,
+    "framewor": 595,
+    "frameworks</w>": 596,
+    "stress</w>": 597,
+    "influ": 598,
+    "influence</w>": 599,
+    "yp": 600,
+    "level": 601,
+    "ure,</w>": 602,
+    "ying</w>": 603,
+    "around</w>": 604,
+    "conf": 605,
+    "shape</w>": 606,
+    "financing</w>": 607,
+    "ratios,</w>": 608,
+    "seg": 609,
+    "indicators</w>": 610,
+    "other</w>": 611,
+    "continue</w>": 612,
+    "ance,</w>": 613,
+    "infrastruct": 614,
+    "both</w>": 615,
+    "env": 616,
+    "environ": 617,
+    "environment": 618,
+    "soci": 619,
+    "social,</w>": 620,
+    "strategies,</w>": 621,
+    "growth,</w>": 622,
+    "margins,</w>": 623,
+    "tions,</w>": 624,
+    "partic": 625,
+    "tly</w>": 626,
+    "been</w>": 627,
+    "maj": 628,
+    "major</w>": 629,
+    "closely</w>": 630,
+    "light</w>": 631,
+    "espec": 632,
+    "especi": 633,
+    "especially</w>": 634,
+    "global</w>": 635,
+    "how</w>": 636,
+    "ustr": 637,
+    "activ": 638,
+    "ational</w>": 639,
+    "deve": 640,
+    "develop": 641,
+    "developments</w>": 642,
+    "‑rel": 643,
+    "‑related</w>": 644,
+    "decision": 645,
+    "arter": 646,
+    "excee": 647,
+    "exceeded</w>": 648,
+    "wide</w>": 649,
+    "buy": 650,
+    "shareholder</w>": 651,
+    "Li": 652,
+    "Liquid": 653,
+    "Liquidity</w>": 654,
+    "their</w>": 655,
+    "stocks</w>": 656,
+    "this</w>": 657,
+    "defaul": 658,
+    "default</w>": 659,
+    "concer": 660,
+    "concern": 661,
+    "sectors.</w>": 662,
+    "announce": 663,
+    "star": 664,
+    "start": 665,
+    "startup</w>": 666,
+    "cons": 667,
+    "um</w>": 668,
+    "cost-": 669,
+    "cut": 670,
+    "sub": 671,
+    "demand.</w>": 672,
+    "hel": 673,
+    "help": 674,
+    "helped</w>": 675,
+    "reduce</w>": 676,
+    "overall</w>": 677,
+    "risk.</w>": 678,
+    "investment-": 679,
+    "investment-grade</w>": 680,
+    "flow</w>": 681,
+    "revenues.</w>": 682,
+    "stricter</w>": 683,
+    "adequ": 684,
+    "adequacy</w>": 685,
+    "contrac": 686,
+    "ts.</w>": 687,
+    "sheet.</w>": 688,
+    "Dividend</w>": 689,
+    "stock</w>": 690,
+    "index</w>": 691,
+    "all": 692,
+    "ivate</w>": 693,
+    "bench": 694,
+    "Re": 695,
+    "sof": 696,
+    "mort": 697,
+    "treasur": 698,
+    "treasury</w>": 699,
+    "part": 700,
+    "optimi": 701,
+    "optimiz": 702,
+    "receiv": 703,
+    "receivab": 704,
+    "t.</w>": 705,
+    "securities</w>": 706,
+    "sa": 707,
+    "portfolio.</w>": 708,
+    "extreme</w>": 709,
+    "strengthened</w>": 710,
+    "revised</w>": 711,
+    "underw": 712,
+    "underwr": 713,
+    "stand": 714,
+    "standar": 715,
+    "profitability.</w>": 716,
+    "yields</w>": 717,
+    "government</w>": 718,
+    "performance</w>": 719,
+    "large-cap": 720,
+    "synerg": 721,
+    "opport": 722,
+    "opportun": 723,
+    "tar": 724,
+    "Cor": 725,
+    "Corporate</w>": 726,
+    "min": 727,
+    "deriv": 728,
+    "reported</w>": 729,
+    "busine": 730,
+    "reviewed</w>": 731,
+    "product</w>": 732,
+    "ing.</w>": 733,
+    "model</w>": 734,
+    "conservative</w>": 735,
+    "bro": 736,
+    "attract</w>": 737,
+    "benef": 738,
+    "tions.</w>": 739,
+    "sovereign</w>": 740,
+    "diver": 741,
+    "diversif": 742,
+    "diversified</w>": 743,
+    "alter": 744,
+    "altern": 745,
+    "alternative</w>": 746,
+    "experien": 747,
+    "experienced</w>": 748,
+    "fl": 749,
+    "intern": 750,
+    "controls.</w>": 751,
+    "implemented</w>": 752,
+    "anti-": 753,
+    "anti-mone": 754,
+    "anti-money</w>": 755,
+    "launder": 756,
+    "support</w>": 757,
+    "commod": 758,
+    "scenar": 759,
+    "scenario": 760,
+    "app": 761,
+    "lay": 762,
+    "swap": 763,
+    "transparenc": 764,
+    "transparency.</w>": 765,
+    "realloc": 766,
+    "funds</w>": 767,
+    "narro": 768,
+    "reac": 769,
+    "reacted</w>": 770,
+    "ES": 771,
+    "ESG": 772,
+    "ESG</w>": 773,
+    "factors</w>": 774,
+    "itiz": 775,
+    "itization</w>": 776,
+    "off</w>": 777,
+    "borrow": 778,
+    "borrowing</w>": 779,
+    "div": 780,
+    "division</w>": 781,
+    "gains.</w>": 782,
+    "accommodative</w>": 783,
+    "cu": 784,
+    "engage": 785,
+    "uncertainty.</w>": 786,
+    "air": 787,
+    "car": 788,
+    "delin": 789,
+    "delinquen": 790,
+    "delinquency</w>": 791,
+    "imposed</w>": 792,
+    "reporting</w>": 793,
+    "high-yield</w>": 794,
+    "restruct": 795,
+    "restructuring</w>": 796,
+    "ai": 797,
+    "negoti": 798,
+    "covenant</w>": 799,
+    "lenders.</w>": 800,
+    "gu": 801,
+    "guid": 802,
+    "guidance.</w>": 803,
+    "advis": 804,
+    "flexib": 805,
+    "flexibilit": 806,
+    "linked</w>": 807,
+    "-in": 808,
+    "Financ": 809,
+    "Financial</w>": 810,
+    "complex</w>": 811,
+    "system</w>": 812,
+    "instr": 813,
+    "instru": 814,
+    "bonds,</w>": 815,
+    "each</w>": 816,
+    "return</w>": 817,
+    "Instit": 818,
+    "Institution": 819,
+    "Institutional</w>": 820,
+    "funds,</w>": 821,
+    "allocate</w>": 822,
+    "return,</w>": 823,
+    "volatility,</w>": 824,
+    "ation,</w>": 825,
+    "discoun": 826,
+    "discount</w>": 827,
+    "valuation</w>": 828,
+    "multi": 829,
+    "typ": 830,
+    "ically</w>": 831,
+    "At</w>": 832,
+    "focus</w>": 833,
+    "structure,</w>": 834,
+    "managing</w>": 835,
+    "firm’s</w>": 836,
+    "sus</w>": 837,
+    "ants</w>": 838,
+    "management": 839,
+    "les,</w>": 840,
+    "inventor": 841,
+    "directly</w>": 842,
+    "cy": 843,
+    "need</w>": 844,
+    "ving</w>": 845,
+    "program": 846,
+    "signal</w>": 847,
+    "In</w>": 848,
+    "periods</w>": 849,
+    "firms</w>": 850,
+    "resilien": 851,
+    "ce,</w>": 852,
+    "leng": 853,
+    "Mer": 854,
+    "Mergers</w>": 855,
+    "acquisitions</w>": 856,
+    "itional</w>": 857,
+    "integration</w>": 858,
+    "Ban": 859,
+    "depo": 860,
+    "measures</w>": 861,
+    "designed</w>": 862,
+    "stress.</w>": 863,
+    "qualit": 864,
+    "Digital</w>": 865,
+    "inn": 866,
+    "inno": 867,
+    "innov": 868,
+    "innovations</w>": 869,
+    "instit": 870,
+    "institutions</w>": 871,
+    "av": 872,
+    "governance,</w>": 873,
+    "infrastructure.</w>": 874,
+    "For</w>": 875,
+    "investors,</w>": 876,
+    "environmental,</w>": 877,
+    "thematic</w>": 878,
+    "ix": 879,
+    "ixed</w>": 880,
+    "segments</w>": 881,
+    "Equity</w>": 882,
+    "competitive</w>": 883,
+    "currenc": 884,
+    "comb": 885,
+    "combin": 886,
+    "shifting</w>": 887,
+    "evol": 888,
+    "signs</w>": 889,
+    "slow": 890,
+    "changing</w>": 891,
+    "particularly</w>": 892,
+    "outlo": 893,
+    "outloo": 894,
+    "outlook": 895,
+    "important</w>": 896,
+    "foreign</w>": 897,
+    "markets,</w>": 898,
+    "domestic</w>": 899,
+    "sel": 900,
+    "fis": 901,
+    "fisc": 902,
+    "fiscal</w>": 903,
+    "reports</w>": 904,
+    "head": 905,
+    "companies</w>": 906,
+    "behav": 907,
+    "behaviour": 908,
+    "heal": 909,
+    "health": 910,
+    "industr": 911,
+    "manu": 912,
+    "manufac": 913,
+    "manufact": 914,
+    "hou": 915,
+    "spending</w>": 916,
+    "scrutin": 917,
+    "levels,</w>": 918,
+    "confiden": 919,
+    "trig": 920,
+    "trigger</w>": 921,
+    "l‑": 922,
+    "activity</w>": 923,
+    "ws,</w>": 924,
+    "structural</w>": 925,
+    "non‑": 926,
+    "cross": 927,
+    "cross‑": 928,
+    "cross‑bor": 929,
+    "cross‑border</w>": 930,
+    "analysed</w>": 931,
+    "highlight</w>": 932,
+    "trends,</w>": 933,
+    "since</w>": 934,
+    "these</w>": 935,
+    "pub": 936,
+    "ta": 937,
+    "tax": 938,
+    "green": 939,
+    "sustainabilit": 940,
+    "frequently</w>": 941,
+    "sentiment": 942,
+    "sentiment,</w>": 943,
+    "countr": 944,
+    "wel": 945,
+    "well</w>": 946,
+    "specific</w>": 947,
+    "affecting</w>": 948,
+    "news</w>": 949,
+    "‑office</w>": 950,
+    "finance‑related</w>": 951,
+    "decisions,</w>": 952
+  },
+  "id_to_token": {
+    "0": "<pad>",
+    "1": "<unk>",
+    "2": "<bos>",
+    "3": "<eos>",
+    "4": ",",
+    "5": "-",
+    "6": ".",
+    "7": "</w>",
+    "8": "A",
+    "9": "B",
+    "10": "C",
+    "11": "D",
+    "12": "E",
+    "13": "F",
+    "14": "G",
+    "15": "I",
+    "16": "L",
+    "17": "M",
+    "18": "N",
+    "19": "O",
+    "20": "P",
+    "21": "Q",
+    "22": "R",
+    "23": "S",
+    "24": "T",
+    "25": "V",
+    "26": "W",
+    "27": "a",
+    "28": "b",
+    "29": "c",
+    "30": "d",
+    "31": "e",
+    "32": "f",
+    "33": "g",
+    "34": "h",
+    "35": "i",
+    "36": "j",
+    "37": "k",
+    "38": "l",
+    "39": "m",
+    "40": "n",
+    "41": "o",
+    "42": "p",
+    "43": "q",
+    "44": "r",
+    "45": "s",
+    "46": "t",
+    "47": "u",
+    "48": "v",
+    "49": "w",
+    "50": "x",
+    "51": "y",
+    "52": "z",
+    "53": "‑",
+    "54": "—",
+    "55": "’",
+    "56": "in",
+    "57": "e</w>",
+    "58": "s</w>",
+    "59": "an",
+    "60": "d</w>",
+    "61": "re",
+    "62": "on",
+    "63": "ti",
+    "64": "er",
+    "65": "en",
+    "66": "or",
+    "67": ",</w>",
+    "68": "t</w>",
+    "69": "al",
+    "70": ".</w>",
+    "71": "y</w>",
+    "72": "ed</w>",
+    "73": "g</w>",
+    "74": "st",
+    "75": "he</w>",
+    "76": "it",
+    "77": "ar",
+    "78": "and</w>",
+    "79": "ing</w>",
+    "80": "at",
+    "81": "s,</w>",
+    "82": "ro",
+    "83": "al</w>",
+    "84": "s.</w>",
+    "85": "The</w>",
+    "86": "ic",
+    "87": "is",
+    "88": "o</w>",
+    "89": "ec",
+    "90": "co",
+    "91": "es</w>",
+    "92": "on</w>",
+    "93": "men",
+    "94": "ac",
+    "95": "su",
+    "96": "to</w>",
+    "97": "anc",
+    "98": "lo",
+    "99": "h</w>",
+    "100": "un",
+    "101": "er</w>",
+    "102": "of",
+    "103": "de",
+    "104": "ol",
+    "105": "se",
+    "106": "ve",
+    "107": "tr",
+    "108": "ig",
+    "109": "ag",
+    "110": "mp",
+    "111": "or</w>",
+    "112": "qu",
+    "113": "ap",
+    "114": "th",
+    "115": "ur",
+    "116": "ex",
+    "117": "ment",
+    "118": "por",
+    "119": "in</w>",
+    "120": "mar",
+    "121": "as",
+    "122": "a</w>",
+    "123": "et",
+    "124": "of</w>",
+    "125": "k</w>",
+    "126": "ation",
+    "127": "sh",
+    "128": "inve",
+    "129": "cre",
+    "130": "int",
+    "131": "ly</w>",
+    "132": "m</w>",
+    "133": "ity</w>",
+    "134": "invest",
+    "135": "ris",
+    "136": "ance</w>",
+    "137": "ul",
+    "138": "mark",
+    "139": "ital</w>",
+    "140": "ab",
+    "141": "pro",
+    "142": "ie",
+    "143": "il",
+    "144": "ad",
+    "145": "uc",
+    "146": "cap",
+    "147": "man",
+    "148": "ate</w>",
+    "149": "fin",
+    "150": "en</w>",
+    "151": "per",
+    "152": "capital</w>",
+    "153": "ors</w>",
+    "154": "ain",
+    "155": "cred",
+    "156": "ate",
+    "157": "ial</w>",
+    "158": "ne",
+    "159": "exp",
+    "160": "financ",
+    "161": "ban",
+    "162": "comp",
+    "163": "sp",
+    "164": "fun",
+    "165": "port",
+    "166": "wh",
+    "167": "ch",
+    "168": "manag",
+    "169": "low",
+    "170": "for",
+    "171": "ou",
+    "172": "le",
+    "173": "com",
+    "174": "ing",
+    "175": "ign",
+    "176": "si",
+    "177": "credit</w>",
+    "178": "y,</w>",
+    "179": "qui",
+    "180": "pol",
+    "181": "ding</w>",
+    "182": "risk</w>",
+    "183": "am",
+    "184": "polic",
+    "185": "an</w>",
+    "186": "ds</w>",
+    "187": "ect",
+    "188": "ations</w>",
+    "189": "ir",
+    "190": "oc",
+    "191": "duc",
+    "192": "reg",
+    "193": "pr",
+    "194": "li",
+    "195": "w</w>",
+    "196": "financial</w>",
+    "197": "ments</w>",
+    "198": "inf",
+    "199": "gr",
+    "200": "bon",
+    "201": "its</w>",
+    "202": "over",
+    "203": "he",
+    "204": "asset</w>",
+    "205": "market",
+    "206": "ons</w>",
+    "207": "mo",
+    "208": "with</w>",
+    "209": "ter",
+    "210": "af",
+    "211": "ang",
+    "212": "fic",
+    "213": "regul",
+    "214": "op",
+    "215": "om",
+    "216": "e.</w>",
+    "217": "portf",
+    "218": "portfoli",
+    "219": "vol",
+    "220": "ut",
+    "221": "regulat",
+    "222": "iv",
+    "223": "tran",
+    "224": "ss</w>",
+    "225": "interest</w>",
+    "226": "cur",
+    "227": "infl",
+    "228": "alu",
+    "229": "investors</w>",
+    "230": "policy</w>",
+    "231": "up",
+    "232": "cy</w>",
+    "233": "hig",
+    "234": "pric",
+    "235": "ha",
+    "236": "ce</w>",
+    "237": "imp",
+    "238": "ory</w>",
+    "239": "bank</w>",
+    "240": "ear",
+    "241": "ce",
+    "242": "valu",
+    "243": "quid",
+    "244": "po",
+    "245": "risk",
+    "246": "gy</w>",
+    "247": "bal",
+    "248": "l</w>",
+    "249": "bank",
+    "250": "’s</w>",
+    "251": "ay",
+    "252": "y.</w>",
+    "253": "porate</w>",
+    "254": "we",
+    "255": "strate",
+    "256": "uct",
+    "257": "cl",
+    "258": "can</w>",
+    "259": "ning",
+    "260": "expect",
+    "261": "by</w>",
+    "262": "compan",
+    "263": "yie",
+    "264": "yiel",
+    "265": "te",
+    "266": "war",
+    "267": "from</w>",
+    "268": "cost",
+    "269": "be",
+    "270": "ind",
+    "271": "fir",
+    "272": "form",
+    "273": "balance</w>",
+    "274": "age</w>",
+    "275": "manage",
+    "276": "prov",
+    "277": "overn",
+    "278": "alloc",
+    "279": "ant</w>",
+    "280": "new</w>",
+    "281": "issu",
+    "282": "ies,</w>",
+    "283": "tral</w>",
+    "284": "earning",
+    "285": "rati",
+    "286": "d.</w>",
+    "287": "d,</w>",
+    "288": "incre",
+    "289": "to",
+    "290": "funding</w>",
+    "291": "me",
+    "292": "rem",
+    "293": "curren",
+    "294": "under",
+    "295": "ack",
+    "296": "pl",
+    "297": "liquid",
+    "298": "io",
+    "299": "govern",
+    "300": "act</w>",
+    "301": "ally</w>",
+    "302": "corporate</w>",
+    "303": "investment</w>",
+    "304": "ic</w>",
+    "305": "markets</w>",
+    "306": "central</w>",
+    "307": "earnings</w>",
+    "308": "anal",
+    "309": "analy",
+    "310": "marg",
+    "311": "bu",
+    "312": "fund</w>",
+    "313": "ward</w>",
+    "314": "ment.</w>",
+    "315": "ue</w>",
+    "316": "cr",
+    "317": "if",
+    "318": "iden",
+    "319": "pay",
+    "320": "ary</w>",
+    "321": "-ter",
+    "322": "-term</w>",
+    "323": "deb",
+    "324": "bonds</w>",
+    "325": "lever",
+    "326": "asset",
+    "327": "trans",
+    "328": "urn",
+    "329": "fut",
+    "330": "grow",
+    "331": "strateg",
+    "332": "struct",
+    "333": "clu",
+    "334": "ds,</w>",
+    "335": "often</w>",
+    "336": "have</w>",
+    "337": "spec",
+    "338": "about</w>",
+    "339": "after</w>",
+    "340": "yield</w>",
+    "341": "ks</w>",
+    "342": "ign</w>",
+    "343": "able</w>",
+    "344": "dg",
+    "345": "currency</w>",
+    "346": "using</w>",
+    "347": "equity</w>",
+    "348": "uring</w>",
+    "349": "perio",
+    "350": "debt</w>",
+    "351": "cond",
+    "352": "lar",
+    "353": "sy",
+    "354": "comm",
+    "355": "rate</w>",
+    "356": "mode",
+    "357": "quen",
+    "358": "dat",
+    "359": "bo",
+    "360": "fac",
+    "361": "which</w>",
+    "362": "In",
+    "363": "while</w>",
+    "364": "dis",
+    "365": "ers</w>",
+    "366": "consu",
+    "367": "consumer</w>",
+    "368": "al,</w>",
+    "369": "ws</w>",
+    "370": "rates</w>",
+    "371": "margin",
+    "372": "indic",
+    "373": "forming</w>",
+    "374": "sheet",
+    "375": "throu",
+    "376": "throug",
+    "377": "through</w>",
+    "378": "par",
+    "379": "long",
+    "380": "back",
+    "381": "igital</w>",
+    "382": "rev",
+    "383": "abilit",
+    "384": "again",
+    "385": "against</w>",
+    "386": "allocation</w>",
+    "387": "larg",
+    "388": "merg",
+    "389": "stain",
+    "390": "off",
+    "391": "rate",
+    "392": "adop",
+    "393": "future</w>",
+    "394": "ls</w>",
+    "395": "high",
+    "396": "ies.</w>",
+    "397": "ts</w>",
+    "398": "econom",
+    "399": "economic</w>",
+    "400": "uncer",
+    "401": "uncert",
+    "402": "non",
+    "403": "flows</w>",
+    "404": "inclu",
+    "405": "including</w>",
+    "406": "ke",
+    "407": "key</w>",
+    "408": "data</w>",
+    "409": "inflation</w>",
+    "410": "ra",
+    "411": "expectations</w>",
+    "412": "company</w>",
+    "413": "hol",
+    "414": "close",
+    "415": "bond</w>",
+    "416": "ir</w>",
+    "417": "techn",
+    "418": "technolo",
+    "419": "fa",
+    "420": "exchang",
+    "421": "exchange</w>",
+    "422": "volatility</w>",
+    "423": "scr",
+    "424": "firm</w>",
+    "425": "hedg",
+    "426": "performing</w>",
+    "427": "loan",
+    "428": "pres",
+    "429": "bank’s</w>",
+    "430": "id</w>",
+    "431": "tim",
+    "432": "wor",
+    "433": "management.</w>",
+    "434": "do",
+    "435": "dow",
+    "436": "down",
+    "437": "expan",
+    "438": "liquidity</w>",
+    "439": "ses.</w>",
+    "440": "condition",
+    "441": "ht</w>",
+    "442": "pen",
+    "443": "adj",
+    "444": "adju",
+    "445": "e-",
+    "446": "signific",
+    "447": "significant</w>",
+    "448": "governance</w>",
+    "449": "commit",
+    "450": "sustain",
+    "451": "weal",
+    "452": "wealth</w>",
+    "453": "ss",
+    "454": "models</w>",
+    "455": "fre",
+    "456": "fe",
+    "457": "used</w>",
+    "458": "metric",
+    "459": "borro",
+    "460": "uncertaint",
+    "461": "provi",
+    "462": "merging</w>",
+    "463": "go",
+    "464": "id",
+    "465": "mul",
+    "466": "return",
+    "467": "across</w>",
+    "468": "liquidit",
+    "469": "liquidity,</w>",
+    "470": "risk,</w>",
+    "471": "impact</w>",
+    "472": "ence</w>",
+    "473": "rates,</w>",
+    "474": "costs,</w>",
+    "475": "When</w>",
+    "476": "pu",
+    "477": "leve",
+    "478": "foc",
+    "479": "firm",
+    "480": "ing,</w>",
+    "481": "contin",
+    "482": "soc",
+    "483": "atten",
+    "484": "attention</w>",
+    "485": "growth",
+    "486": "lobal</w>",
+    "487": "ma",
+    "488": "Ne",
+    "489": "News</w>",
+    "490": "rel",
+    "491": "ow</w>",
+    "492": "they</w>",
+    "493": "inflation",
+    "494": "exce",
+    "495": "ann",
+    "496": "announ",
+    "497": "enhance</w>",
+    "498": "sharehol",
+    "499": "increased</w>",
+    "500": "exposure</w>",
+    "501": "technology</w>",
+    "502": "toward</w>",
+    "503": "up</w>",
+    "504": "investors.</w>",
+    "505": "due</w>",
+    "506": "was</w>",
+    "507": "strong</w>",
+    "508": "deman",
+    "509": "shif",
+    "510": "investment",
+    "511": "ds.</w>",
+    "512": "revenu",
+    "513": "es.</w>",
+    "514": "introduced</w>",
+    "515": "stric",
+    "516": "requirement",
+    "517": "forward</w>",
+    "518": "loans</w>",
+    "519": "increase",
+    "520": "ividen",
+    "521": "ividend</w>",
+    "522": "amid</w>",
+    "523": "optim",
+    "524": "deal</w>",
+    "525": "king</w>",
+    "526": "sovere",
+    "527": "long-term</w>",
+    "528": "reduced</w>",
+    "529": "expanded</w>",
+    "530": "digital</w>",
+    "531": "dr",
+    "532": "during</w>",
+    "533": "period</w>",
+    "534": "volatilit",
+    "535": "streng",
+    "536": "tigh",
+    "537": "conditions.</w>",
+    "538": "stan",
+    "539": "profit",
+    "540": "profitabilit",
+    "541": "pension</w>",
+    "542": "adjusted</w>",
+    "543": "syner",
+    "544": "ders.</w>",
+    "545": "committe",
+    "546": "committee</w>",
+    "547": "revie",
+    "548": "serv",
+    "549": "active</w>",
+    "550": "issued</w>",
+    "551": "energy</w>",
+    "552": "proj",
+    "553": "payment</w>",
+    "554": "transac",
+    "555": "ze</w>",
+    "556": "assets.</w>",
+    "557": "turn",
+    "558": "au",
+    "559": "control",
+    "560": "ti-",
+    "561": "adopted</w>",
+    "562": "high-",
+    "563": "frequen",
+    "564": "management</w>",
+    "565": "issuance</w>",
+    "566": "sw",
+    "567": "nar",
+    "568": "metrics</w>",
+    "569": "gain",
+    "570": "monetary</w>",
+    "571": "strategic</w>",
+    "572": "gag",
+    "573": "cash</w>",
+    "574": "macroeconomic</w>",
+    "575": "ref",
+    "576": "non-",
+    "577": "emerging</w>",
+    "578": "markets.</w>",
+    "579": "goti",
+    "580": "coven",
+    "581": "adv",
+    "582": "shor",
+    "583": "short",
+    "584": "short-term</w>",
+    "585": "ib",
+    "586": "based</w>",
+    "587": "ge",
+    "588": "Fin",
+    "589": "syste",
+    "590": "betwe",
+    "591": "between</w>",
+    "592": "ments,</w>",
+    "593": "atives,</w>",
+    "594": "frame",
+    "595": "framewor",
+    "596": "frameworks</w>",
+    "597": "stress</w>",
+    "598": "influ",
+    "599": "influence</w>",
+    "600": "yp",
+    "601": "level",
+    "602": "ure,</w>",
+    "603": "ying</w>",
+    "604": "around</w>",
+    "605": "conf",
+    "606": "shape</w>",
+    "607": "financing</w>",
+    "608": "ratios,</w>",
+    "609": "seg",
+    "610": "indicators</w>",
+    "611": "other</w>",
+    "612": "continue</w>",
+    "613": "ance,</w>",
+    "614": "infrastruct",
+    "615": "both</w>",
+    "616": "env",
+    "617": "environ",
+    "618": "environment",
+    "619": "soci",
+    "620": "social,</w>",
+    "621": "strategies,</w>",
+    "622": "growth,</w>",
+    "623": "margins,</w>",
+    "624": "tions,</w>",
+    "625": "partic",
+    "626": "tly</w>",
+    "627": "been</w>",
+    "628": "maj",
+    "629": "major</w>",
+    "630": "closely</w>",
+    "631": "light</w>",
+    "632": "espec",
+    "633": "especi",
+    "634": "especially</w>",
+    "635": "global</w>",
+    "636": "how</w>",
+    "637": "ustr",
+    "638": "activ",
+    "639": "ational</w>",
+    "640": "deve",
+    "641": "develop",
+    "642": "developments</w>",
+    "643": "‑rel",
+    "644": "‑related</w>",
+    "645": "decision",
+    "646": "arter",
+    "647": "excee",
+    "648": "exceeded</w>",
+    "649": "wide</w>",
+    "650": "buy",
+    "651": "shareholder</w>",
+    "652": "Li",
+    "653": "Liquid",
+    "654": "Liquidity</w>",
+    "655": "their</w>",
+    "656": "stocks</w>",
+    "657": "this</w>",
+    "658": "defaul",
+    "659": "default</w>",
+    "660": "concer",
+    "661": "concern",
+    "662": "sectors.</w>",
+    "663": "announce",
+    "664": "star",
+    "665": "start",
+    "666": "startup</w>",
+    "667": "cons",
+    "668": "um</w>",
+    "669": "cost-",
+    "670": "cut",
+    "671": "sub",
+    "672": "demand.</w>",
+    "673": "hel",
+    "674": "help",
+    "675": "helped</w>",
+    "676": "reduce</w>",
+    "677": "overall</w>",
+    "678": "risk.</w>",
+    "679": "investment-",
+    "680": "investment-grade</w>",
+    "681": "flow</w>",
+    "682": "revenues.</w>",
+    "683": "stricter</w>",
+    "684": "adequ",
+    "685": "adequacy</w>",
+    "686": "contrac",
+    "687": "ts.</w>",
+    "688": "sheet.</w>",
+    "689": "Dividend</w>",
+    "690": "stock</w>",
+    "691": "index</w>",
+    "692": "all",
+    "693": "ivate</w>",
+    "694": "bench",
+    "695": "Re",
+    "696": "sof",
+    "697": "mort",
+    "698": "treasur",
+    "699": "treasury</w>",
+    "700": "part",
+    "701": "optimi",
+    "702": "optimiz",
+    "703": "receiv",
+    "704": "receivab",
+    "705": "t.</w>",
+    "706": "securities</w>",
+    "707": "sa",
+    "708": "portfolio.</w>",
+    "709": "extreme</w>",
+    "710": "strengthened</w>",
+    "711": "revised</w>",
+    "712": "underw",
+    "713": "underwr",
+    "714": "stand",
+    "715": "standar",
+    "716": "profitability.</w>",
+    "717": "yields</w>",
+    "718": "government</w>",
+    "719": "performance</w>",
+    "720": "large-cap",
+    "721": "synerg",
+    "722": "opport",
+    "723": "opportun",
+    "724": "tar",
+    "725": "Cor",
+    "726": "Corporate</w>",
+    "727": "min",
+    "728": "deriv",
+    "729": "reported</w>",
+    "730": "busine",
+    "731": "reviewed</w>",
+    "732": "product</w>",
+    "733": "ing.</w>",
+    "734": "model</w>",
+    "735": "conservative</w>",
+    "736": "bro",
+    "737": "attract</w>",
+    "738": "benef",
+    "739": "tions.</w>",
+    "740": "sovereign</w>",
+    "741": "diver",
+    "742": "diversif",
+    "743": "diversified</w>",
+    "744": "alter",
+    "745": "altern",
+    "746": "alternative</w>",
+    "747": "experien",
+    "748": "experienced</w>",
+    "749": "fl",
+    "750": "intern",
+    "751": "controls.</w>",
+    "752": "implemented</w>",
+    "753": "anti-",
+    "754": "anti-mone",
+    "755": "anti-money</w>",
+    "756": "launder",
+    "757": "support</w>",
+    "758": "commod",
+    "759": "scenar",
+    "760": "scenario",
+    "761": "app",
+    "762": "lay",
+    "763": "swap",
+    "764": "transparenc",
+    "765": "transparency.</w>",
+    "766": "realloc",
+    "767": "funds</w>",
+    "768": "narro",
+    "769": "reac",
+    "770": "reacted</w>",
+    "771": "ES",
+    "772": "ESG",
+    "773": "ESG</w>",
+    "774": "factors</w>",
+    "775": "itiz",
+    "776": "itization</w>",
+    "777": "off</w>",
+    "778": "borrow",
+    "779": "borrowing</w>",
+    "780": "div",
+    "781": "division</w>",
+    "782": "gains.</w>",
+    "783": "accommodative</w>",
+    "784": "cu",
+    "785": "engage",
+    "786": "uncertainty.</w>",
+    "787": "air",
+    "788": "car",
+    "789": "delin",
+    "790": "delinquen",
+    "791": "delinquency</w>",
+    "792": "imposed</w>",
+    "793": "reporting</w>",
+    "794": "high-yield</w>",
+    "795": "restruct",
+    "796": "restructuring</w>",
+    "797": "ai",
+    "798": "negoti",
+    "799": "covenant</w>",
+    "800": "lenders.</w>",
+    "801": "gu",
+    "802": "guid",
+    "803": "guidance.</w>",
+    "804": "advis",
+    "805": "flexib",
+    "806": "flexibilit",
+    "807": "linked</w>",
+    "808": "-in",
+    "809": "Financ",
+    "810": "Financial</w>",
+    "811": "complex</w>",
+    "812": "system</w>",
+    "813": "instr",
+    "814": "instru",
+    "815": "bonds,</w>",
+    "816": "each</w>",
+    "817": "return</w>",
+    "818": "Instit",
+    "819": "Institution",
+    "820": "Institutional</w>",
+    "821": "funds,</w>",
+    "822": "allocate</w>",
+    "823": "return,</w>",
+    "824": "volatility,</w>",
+    "825": "ation,</w>",
+    "826": "discoun",
+    "827": "discount</w>",
+    "828": "valuation</w>",
+    "829": "multi",
+    "830": "typ",
+    "831": "ically</w>",
+    "832": "At</w>",
+    "833": "focus</w>",
+    "834": "structure,</w>",
+    "835": "managing</w>",
+    "836": "firm’s</w>",
+    "837": "sus</w>",
+    "838": "ants</w>",
+    "839": "management",
+    "840": "les,</w>",
+    "841": "inventor",
+    "842": "directly</w>",
+    "843": "cy",
+    "844": "need</w>",
+    "845": "ving</w>",
+    "846": "program",
+    "847": "signal</w>",
+    "848": "In</w>",
+    "849": "periods</w>",
+    "850": "firms</w>",
+    "851": "resilien",
+    "852": "ce,</w>",
+    "853": "leng",
+    "854": "Mer",
+    "855": "Mergers</w>",
+    "856": "acquisitions</w>",
+    "857": "itional</w>",
+    "858": "integration</w>",
+    "859": "Ban",
+    "860": "depo",
+    "861": "measures</w>",
+    "862": "designed</w>",
+    "863": "stress.</w>",
+    "864": "qualit",
+    "865": "Digital</w>",
+    "866": "inn",
+    "867": "inno",
+    "868": "innov",
+    "869": "innovations</w>",
+    "870": "instit",
+    "871": "institutions</w>",
+    "872": "av",
+    "873": "governance,</w>",
+    "874": "infrastructure.</w>",
+    "875": "For</w>",
+    "876": "investors,</w>",
+    "877": "environmental,</w>",
+    "878": "thematic</w>",
+    "879": "ix",
+    "880": "ixed</w>",
+    "881": "segments</w>",
+    "882": "Equity</w>",
+    "883": "competitive</w>",
+    "884": "currenc",
+    "885": "comb",
+    "886": "combin",
+    "887": "shifting</w>",
+    "888": "evol",
+    "889": "signs</w>",
+    "890": "slow",
+    "891": "changing</w>",
+    "892": "particularly</w>",
+    "893": "outlo",
+    "894": "outloo",
+    "895": "outlook",
+    "896": "important</w>",
+    "897": "foreign</w>",
+    "898": "markets,</w>",
+    "899": "domestic</w>",
+    "900": "sel",
+    "901": "fis",
+    "902": "fisc",
+    "903": "fiscal</w>",
+    "904": "reports</w>",
+    "905": "head",
+    "906": "companies</w>",
+    "907": "behav",
+    "908": "behaviour",
+    "909": "heal",
+    "910": "health",
+    "911": "industr",
+    "912": "manu",
+    "913": "manufac",
+    "914": "manufact",
+    "915": "hou",
+    "916": "spending</w>",
+    "917": "scrutin",
+    "918": "levels,</w>",
+    "919": "confiden",
+    "920": "trig",
+    "921": "trigger</w>",
+    "922": "l‑",
+    "923": "activity</w>",
+    "924": "ws,</w>",
+    "925": "structural</w>",
+    "926": "non‑",
+    "927": "cross",
+    "928": "cross‑",
+    "929": "cross‑bor",
+    "930": "cross‑border</w>",
+    "931": "analysed</w>",
+    "932": "highlight</w>",
+    "933": "trends,</w>",
+    "934": "since</w>",
+    "935": "these</w>",
+    "936": "pub",
+    "937": "ta",
+    "938": "tax",
+    "939": "green",
+    "940": "sustainabilit",
+    "941": "frequently</w>",
+    "942": "sentiment",
+    "943": "sentiment,</w>",
+    "944": "countr",
+    "945": "wel",
+    "946": "well</w>",
+    "947": "specific</w>",
+    "948": "affecting</w>",
+    "949": "news</w>",
+    "950": "‑office</w>",
+    "951": "finance‑related</w>",
+    "952": "decisions,</w>"
+  },
+  "merges": [
+    [
+      "i",
+      "n"
+    ],
+    [
+      "e",
+      "</w>"
+    ],
+    [
+      "s",
+      "</w>"
+    ],
+    [
+      "a",
+      "n"
+    ],
+    [
+      "d",
+      "</w>"
+    ],
+    [
+      "r",
+      "e"
+    ],
+    [
+      "o",
+      "n"
+    ],
+    [
+      "t",
+      "i"
+    ],
+    [
+      "e",
+      "r"
+    ],
+    [
+      "e",
+      "n"
+    ],
+    [
+      "o",
+      "r"
+    ],
+    [
+      ",",
+      "</w>"
+    ],
+    [
+      "t",
+      "</w>"
+    ],
+    [
+      "a",
+      "l"
+    ],
+    [
+      ".",
+      "</w>"
+    ],
+    [
+      "y",
+      "</w>"
+    ],
+    [
+      "e",
+      "d</w>"
+    ],
+    [
+      "g",
+      "</w>"
+    ],
+    [
+      "s",
+      "t"
+    ],
+    [
+      "h",
+      "e</w>"
+    ],
+    [
+      "i",
+      "t"
+    ],
+    [
+      "a",
+      "r"
+    ],
+    [
+      "an",
+      "d</w>"
+    ],
+    [
+      "in",
+      "g</w>"
+    ],
+    [
+      "a",
+      "t"
+    ],
+    [
+      "s",
+      ",</w>"
+    ],
+    [
+      "r",
+      "o"
+    ],
+    [
+      "al",
+      "</w>"
+    ],
+    [
+      "s",
+      ".</w>"
+    ],
+    [
+      "T",
+      "he</w>"
+    ],
+    [
+      "i",
+      "c"
+    ],
+    [
+      "i",
+      "s"
+    ],
+    [
+      "o",
+      "</w>"
+    ],
+    [
+      "e",
+      "c"
+    ],
+    [
+      "c",
+      "o"
+    ],
+    [
+      "e",
+      "s</w>"
+    ],
+    [
+      "on",
+      "</w>"
+    ],
+    [
+      "m",
+      "en"
+    ],
+    [
+      "a",
+      "c"
+    ],
+    [
+      "s",
+      "u"
+    ],
+    [
+      "t",
+      "o</w>"
+    ],
+    [
+      "an",
+      "c"
+    ],
+    [
+      "l",
+      "o"
+    ],
+    [
+      "h",
+      "</w>"
+    ],
+    [
+      "u",
+      "n"
+    ],
+    [
+      "er",
+      "</w>"
+    ],
+    [
+      "o",
+      "f"
+    ],
+    [
+      "d",
+      "e"
+    ],
+    [
+      "o",
+      "l"
+    ],
+    [
+      "s",
+      "e"
+    ],
+    [
+      "v",
+      "e"
+    ],
+    [
+      "t",
+      "r"
+    ],
+    [
+      "i",
+      "g"
+    ],
+    [
+      "a",
+      "g"
+    ],
+    [
+      "m",
+      "p"
+    ],
+    [
+      "or",
+      "</w>"
+    ],
+    [
+      "q",
+      "u"
+    ],
+    [
+      "a",
+      "p"
+    ],
+    [
+      "t",
+      "h"
+    ],
+    [
+      "u",
+      "r"
+    ],
+    [
+      "e",
+      "x"
+    ],
+    [
+      "men",
+      "t"
+    ],
+    [
+      "p",
+      "or"
+    ],
+    [
+      "in",
+      "</w>"
+    ],
+    [
+      "m",
+      "ar"
+    ],
+    [
+      "a",
+      "s"
+    ],
+    [
+      "a",
+      "</w>"
+    ],
+    [
+      "e",
+      "t"
+    ],
+    [
+      "of",
+      "</w>"
+    ],
+    [
+      "k",
+      "</w>"
+    ],
+    [
+      "ati",
+      "on"
+    ],
+    [
+      "s",
+      "h"
+    ],
+    [
+      "in",
+      "ve"
+    ],
+    [
+      "c",
+      "re"
+    ],
+    [
+      "in",
+      "t"
+    ],
+    [
+      "l",
+      "y</w>"
+    ],
+    [
+      "m",
+      "</w>"
+    ],
+    [
+      "it",
+      "y</w>"
+    ],
+    [
+      "inve",
+      "st"
+    ],
+    [
+      "r",
+      "is"
+    ],
+    [
+      "anc",
+      "e</w>"
+    ],
+    [
+      "u",
+      "l"
+    ],
+    [
+      "mar",
+      "k"
+    ],
+    [
+      "it",
+      "al</w>"
+    ],
+    [
+      "a",
+      "b"
+    ],
+    [
+      "p",
+      "ro"
+    ],
+    [
+      "i",
+      "e"
+    ],
+    [
+      "i",
+      "l"
+    ],
+    [
+      "a",
+      "d"
+    ],
+    [
+      "u",
+      "c"
+    ],
+    [
+      "c",
+      "ap"
+    ],
+    [
+      "m",
+      "an"
+    ],
+    [
+      "at",
+      "e</w>"
+    ],
+    [
+      "f",
+      "in"
+    ],
+    [
+      "en",
+      "</w>"
+    ],
+    [
+      "p",
+      "er"
+    ],
+    [
+      "cap",
+      "ital</w>"
+    ],
+    [
+      "or",
+      "s</w>"
+    ],
+    [
+      "a",
+      "in"
+    ],
+    [
+      "cre",
+      "d"
+    ],
+    [
+      "at",
+      "e"
+    ],
+    [
+      "i",
+      "al</w>"
+    ],
+    [
+      "n",
+      "e"
+    ],
+    [
+      "ex",
+      "p"
+    ],
+    [
+      "fin",
+      "anc"
+    ],
+    [
+      "b",
+      "an"
+    ],
+    [
+      "co",
+      "mp"
+    ],
+    [
+      "s",
+      "p"
+    ],
+    [
+      "f",
+      "un"
+    ],
+    [
+      "por",
+      "t"
+    ],
+    [
+      "w",
+      "h"
+    ],
+    [
+      "c",
+      "h"
+    ],
+    [
+      "man",
+      "ag"
+    ],
+    [
+      "lo",
+      "w"
+    ],
+    [
+      "f",
+      "or"
+    ],
+    [
+      "o",
+      "u"
+    ],
+    [
+      "l",
+      "e"
+    ],
+    [
+      "co",
+      "m"
+    ],
+    [
+      "in",
+      "g"
+    ],
+    [
+      "ig",
+      "n"
+    ],
+    [
+      "s",
+      "i"
+    ],
+    [
+      "cred",
+      "it</w>"
+    ],
+    [
+      "y",
+      ",</w>"
+    ],
+    [
+      "qu",
+      "i"
+    ],
+    [
+      "p",
+      "ol"
+    ],
+    [
+      "d",
+      "ing</w>"
+    ],
+    [
+      "ris",
+      "k</w>"
+    ],
+    [
+      "a",
+      "m"
+    ],
+    [
+      "pol",
+      "ic"
+    ],
+    [
+      "an",
+      "</w>"
+    ],
+    [
+      "d",
+      "s</w>"
+    ],
+    [
+      "ec",
+      "t"
+    ],
+    [
+      "ation",
+      "s</w>"
+    ],
+    [
+      "i",
+      "r"
+    ],
+    [
+      "o",
+      "c"
+    ],
+    [
+      "d",
+      "uc"
+    ],
+    [
+      "re",
+      "g"
+    ],
+    [
+      "p",
+      "r"
+    ],
+    [
+      "l",
+      "i"
+    ],
+    [
+      "w",
+      "</w>"
+    ],
+    [
+      "financ",
+      "ial</w>"
+    ],
+    [
+      "ment",
+      "s</w>"
+    ],
+    [
+      "in",
+      "f"
+    ],
+    [
+      "g",
+      "r"
+    ],
+    [
+      "b",
+      "on"
+    ],
+    [
+      "it",
+      "s</w>"
+    ],
+    [
+      "o",
+      "ver"
+    ],
+    [
+      "h",
+      "e"
+    ],
+    [
+      "as",
+      "set</w>"
+    ],
+    [
+      "mark",
+      "et"
+    ],
+    [
+      "on",
+      "s</w>"
+    ],
+    [
+      "m",
+      "o"
+    ],
+    [
+      "w",
+      "ith</w>"
+    ],
+    [
+      "t",
+      "er"
+    ],
+    [
+      "a",
+      "f"
+    ],
+    [
+      "an",
+      "g"
+    ],
+    [
+      "f",
+      "ic"
+    ],
+    [
+      "reg",
+      "ul"
+    ],
+    [
+      "o",
+      "p"
+    ],
+    [
+      "o",
+      "m"
+    ],
+    [
+      "e",
+      ".</w>"
+    ],
+    [
+      "port",
+      "f"
+    ],
+    [
+      "portf",
+      "oli"
+    ],
+    [
+      "v",
+      "ol"
+    ],
+    [
+      "u",
+      "t"
+    ],
+    [
+      "regul",
+      "at"
+    ],
+    [
+      "i",
+      "v"
+    ],
+    [
+      "tr",
+      "an"
+    ],
+    [
+      "s",
+      "s</w>"
+    ],
+    [
+      "intere",
+      "st</w>"
+    ],
+    [
+      "c",
+      "ur"
+    ],
+    [
+      "inf",
+      "l"
+    ],
+    [
+      "al",
+      "u"
+    ],
+    [
+      "invest",
+      "ors</w>"
+    ],
+    [
+      "polic",
+      "y</w>"
+    ],
+    [
+      "u",
+      "p"
+    ],
+    [
+      "c",
+      "y</w>"
+    ],
+    [
+      "h",
+      "ig"
+    ],
+    [
+      "pr",
+      "ic"
+    ],
+    [
+      "h",
+      "a"
+    ],
+    [
+      "c",
+      "e</w>"
+    ],
+    [
+      "i",
+      "mp"
+    ],
+    [
+      "or",
+      "y</w>"
+    ],
+    [
+      "ban",
+      "k</w>"
+    ],
+    [
+      "e",
+      "ar"
+    ],
+    [
+      "c",
+      "e"
+    ],
+    [
+      "v",
+      "alu"
+    ],
+    [
+      "qui",
+      "d"
+    ],
+    [
+      "p",
+      "o"
+    ],
+    [
+      "ris",
+      "k"
+    ],
+    [
+      "g",
+      "y</w>"
+    ],
+    [
+      "b",
+      "al"
+    ],
+    [
+      "l",
+      "</w>"
+    ],
+    [
+      "ban",
+      "k"
+    ],
+    [
+      "’",
+      "s</w>"
+    ],
+    [
+      "a",
+      "y"
+    ],
+    [
+      "y",
+      ".</w>"
+    ],
+    [
+      "por",
+      "ate</w>"
+    ],
+    [
+      "w",
+      "e"
+    ],
+    [
+      "str",
+      "ate"
+    ],
+    [
+      "uc",
+      "t"
+    ],
+    [
+      "c",
+      "l"
+    ],
+    [
+      "c",
+      "an</w>"
+    ],
+    [
+      "n",
+      "ing"
+    ],
+    [
+      "exp",
+      "ect"
+    ],
+    [
+      "b",
+      "y</w>"
+    ],
+    [
+      "comp",
+      "an"
+    ],
+    [
+      "y",
+      "ie"
+    ],
+    [
+      "yie",
+      "l"
+    ],
+    [
+      "t",
+      "e"
+    ],
+    [
+      "w",
+      "ar"
+    ],
+    [
+      "f",
+      "rom</w>"
+    ],
+    [
+      "co",
+      "st"
+    ],
+    [
+      "b",
+      "e"
+    ],
+    [
+      "in",
+      "d"
+    ],
+    [
+      "f",
+      "ir"
+    ],
+    [
+      "for",
+      "m"
+    ],
+    [
+      "bal",
+      "ance</w>"
+    ],
+    [
+      "ag",
+      "e</w>"
+    ],
+    [
+      "manag",
+      "e"
+    ],
+    [
+      "pro",
+      "v"
+    ],
+    [
+      "over",
+      "n"
+    ],
+    [
+      "al",
+      "loc"
+    ],
+    [
+      "an",
+      "t</w>"
+    ],
+    [
+      "ne",
+      "w</w>"
+    ],
+    [
+      "is",
+      "su"
+    ],
+    [
+      "ie",
+      "s,</w>"
+    ],
+    [
+      "tr",
+      "al</w>"
+    ],
+    [
+      "ear",
+      "ning"
+    ],
+    [
+      "r",
+      "ati"
+    ],
+    [
+      "d",
+      ".</w>"
+    ],
+    [
+      "d",
+      ",</w>"
+    ],
+    [
+      "in",
+      "cre"
+    ],
+    [
+      "t",
+      "o"
+    ],
+    [
+      "fun",
+      "ding</w>"
+    ],
+    [
+      "m",
+      "e"
+    ],
+    [
+      "re",
+      "m"
+    ],
+    [
+      "cur",
+      "ren"
+    ],
+    [
+      "un",
+      "der"
+    ],
+    [
+      "ac",
+      "k"
+    ],
+    [
+      "p",
+      "l"
+    ],
+    [
+      "li",
+      "quid"
+    ],
+    [
+      "i",
+      "o"
+    ],
+    [
+      "g",
+      "overn"
+    ],
+    [
+      "ac",
+      "t</w>"
+    ],
+    [
+      "al",
+      "ly</w>"
+    ],
+    [
+      "cor",
+      "porate</w>"
+    ],
+    [
+      "invest",
+      "ment</w>"
+    ],
+    [
+      "ic",
+      "</w>"
+    ],
+    [
+      "market",
+      "s</w>"
+    ],
+    [
+      "cen",
+      "tral</w>"
+    ],
+    [
+      "earning",
+      "s</w>"
+    ],
+    [
+      "an",
+      "al"
+    ],
+    [
+      "anal",
+      "y"
+    ],
+    [
+      "mar",
+      "g"
+    ],
+    [
+      "b",
+      "u"
+    ],
+    [
+      "fun",
+      "d</w>"
+    ],
+    [
+      "war",
+      "d</w>"
+    ],
+    [
+      "ment",
+      ".</w>"
+    ],
+    [
+      "u",
+      "e</w>"
+    ],
+    [
+      "c",
+      "r"
+    ],
+    [
+      "i",
+      "f"
+    ],
+    [
+      "i",
+      "den"
+    ],
+    [
+      "p",
+      "ay"
+    ],
+    [
+      "ar",
+      "y</w>"
+    ],
+    [
+      "-",
+      "ter"
+    ],
+    [
+      "-ter",
+      "m</w>"
+    ],
+    [
+      "de",
+      "b"
+    ],
+    [
+      "bon",
+      "ds</w>"
+    ],
+    [
+      "le",
+      "ver"
+    ],
+    [
+      "as",
+      "set"
+    ],
+    [
+      "tran",
+      "s"
+    ],
+    [
+      "ur",
+      "n"
+    ],
+    [
+      "f",
+      "ut"
+    ],
+    [
+      "gro",
+      "w"
+    ],
+    [
+      "strate",
+      "g"
+    ],
+    [
+      "str",
+      "uct"
+    ],
+    [
+      "cl",
+      "u"
+    ],
+    [
+      "d",
+      "s,</w>"
+    ],
+    [
+      "of",
+      "ten</w>"
+    ],
+    [
+      "ha",
+      "ve</w>"
+    ],
+    [
+      "sp",
+      "ec"
+    ],
+    [
+      "ab",
+      "out</w>"
+    ],
+    [
+      "af",
+      "ter</w>"
+    ],
+    [
+      "yiel",
+      "d</w>"
+    ],
+    [
+      "k",
+      "s</w>"
+    ],
+    [
+      "ign",
+      "</w>"
+    ],
+    [
+      "ab",
+      "le</w>"
+    ],
+    [
+      "d",
+      "g"
+    ],
+    [
+      "curren",
+      "cy</w>"
+    ],
+    [
+      "u",
+      "sing</w>"
+    ],
+    [
+      "e",
+      "quity</w>"
+    ],
+    [
+      "ur",
+      "ing</w>"
+    ],
+    [
+      "per",
+      "io"
+    ],
+    [
+      "deb",
+      "t</w>"
+    ],
+    [
+      "con",
+      "d"
+    ],
+    [
+      "l",
+      "ar"
+    ],
+    [
+      "s",
+      "y"
+    ],
+    [
+      "com",
+      "m"
+    ],
+    [
+      "r",
+      "ate</w>"
+    ],
+    [
+      "mo",
+      "de"
+    ],
+    [
+      "qu",
+      "en"
+    ],
+    [
+      "d",
+      "at"
+    ],
+    [
+      "b",
+      "o"
+    ],
+    [
+      "f",
+      "ac"
+    ],
+    [
+      "wh",
+      "ich</w>"
+    ],
+    [
+      "I",
+      "n"
+    ],
+    [
+      "wh",
+      "ile</w>"
+    ],
+    [
+      "d",
+      "is"
+    ],
+    [
+      "er",
+      "s</w>"
+    ],
+    [
+      "con",
+      "su"
+    ],
+    [
+      "consu",
+      "mer</w>"
+    ],
+    [
+      "al",
+      ",</w>"
+    ],
+    [
+      "w",
+      "s</w>"
+    ],
+    [
+      "r",
+      "ates</w>"
+    ],
+    [
+      "marg",
+      "in"
+    ],
+    [
+      "ind",
+      "ic"
+    ],
+    [
+      "form",
+      "ing</w>"
+    ],
+    [
+      "she",
+      "et"
+    ],
+    [
+      "th",
+      "rou"
+    ],
+    [
+      "throu",
+      "g"
+    ],
+    [
+      "throug",
+      "h</w>"
+    ],
+    [
+      "p",
+      "ar"
+    ],
+    [
+      "lon",
+      "g"
+    ],
+    [
+      "b",
+      "ack"
+    ],
+    [
+      "ig",
+      "ital</w>"
+    ],
+    [
+      "re",
+      "v"
+    ],
+    [
+      "ab",
+      "ilit"
+    ],
+    [
+      "ag",
+      "ain"
+    ],
+    [
+      "again",
+      "st</w>"
+    ],
+    [
+      "alloc",
+      "ation</w>"
+    ],
+    [
+      "lar",
+      "g"
+    ],
+    [
+      "mer",
+      "g"
+    ],
+    [
+      "st",
+      "ain"
+    ],
+    [
+      "of",
+      "f"
+    ],
+    [
+      "r",
+      "ate"
+    ],
+    [
+      "ad",
+      "op"
+    ],
+    [
+      "fut",
+      "ure</w>"
+    ],
+    [
+      "l",
+      "s</w>"
+    ],
+    [
+      "hig",
+      "h"
+    ],
+    [
+      "ie",
+      "s.</w>"
+    ],
+    [
+      "t",
+      "s</w>"
+    ],
+    [
+      "econ",
+      "om"
+    ],
+    [
+      "econom",
+      "ic</w>"
+    ],
+    [
+      "un",
+      "cer"
+    ],
+    [
+      "uncer",
+      "t"
+    ],
+    [
+      "n",
+      "on"
+    ],
+    [
+      "f",
+      "lows</w>"
+    ],
+    [
+      "in",
+      "clu"
+    ],
+    [
+      "inclu",
+      "ding</w>"
+    ],
+    [
+      "k",
+      "e"
+    ],
+    [
+      "ke",
+      "y</w>"
+    ],
+    [
+      "dat",
+      "a</w>"
+    ],
+    [
+      "infl",
+      "ation</w>"
+    ],
+    [
+      "r",
+      "a"
+    ],
+    [
+      "expect",
+      "ations</w>"
+    ],
+    [
+      "compan",
+      "y</w>"
+    ],
+    [
+      "h",
+      "ol"
+    ],
+    [
+      "clo",
+      "se"
+    ],
+    [
+      "bon",
+      "d</w>"
+    ],
+    [
+      "ir",
+      "</w>"
+    ],
+    [
+      "tech",
+      "n"
+    ],
+    [
+      "techn",
+      "olo"
+    ],
+    [
+      "f",
+      "a"
+    ],
+    [
+      "ex",
+      "chang"
+    ],
+    [
+      "exchang",
+      "e</w>"
+    ],
+    [
+      "vol",
+      "atility</w>"
+    ],
+    [
+      "s",
+      "cr"
+    ],
+    [
+      "fir",
+      "m</w>"
+    ],
+    [
+      "he",
+      "dg"
+    ],
+    [
+      "per",
+      "forming</w>"
+    ],
+    [
+      "lo",
+      "an"
+    ],
+    [
+      "pre",
+      "s"
+    ],
+    [
+      "bank",
+      "’s</w>"
+    ],
+    [
+      "i",
+      "d</w>"
+    ],
+    [
+      "ti",
+      "m"
+    ],
+    [
+      "w",
+      "or"
+    ],
+    [
+      "manage",
+      "ment.</w>"
+    ],
+    [
+      "d",
+      "o"
+    ],
+    [
+      "do",
+      "w"
+    ],
+    [
+      "dow",
+      "n"
+    ],
+    [
+      "exp",
+      "an"
+    ],
+    [
+      "liquid",
+      "ity</w>"
+    ],
+    [
+      "se",
+      "s.</w>"
+    ],
+    [
+      "cond",
+      "ition"
+    ],
+    [
+      "h",
+      "t</w>"
+    ],
+    [
+      "p",
+      "en"
+    ],
+    [
+      "ad",
+      "j"
+    ],
+    [
+      "adj",
+      "u"
+    ],
+    [
+      "e",
+      "-"
+    ],
+    [
+      "sign",
+      "ific"
+    ],
+    [
+      "signific",
+      "ant</w>"
+    ],
+    [
+      "govern",
+      "ance</w>"
+    ],
+    [
+      "comm",
+      "it"
+    ],
+    [
+      "su",
+      "stain"
+    ],
+    [
+      "we",
+      "al"
+    ],
+    [
+      "weal",
+      "th</w>"
+    ],
+    [
+      "s",
+      "s"
+    ],
+    [
+      "mode",
+      "ls</w>"
+    ],
+    [
+      "f",
+      "re"
+    ],
+    [
+      "f",
+      "e"
+    ],
+    [
+      "u",
+      "sed</w>"
+    ],
+    [
+      "metr",
+      "ic"
+    ],
+    [
+      "bor",
+      "ro"
+    ],
+    [
+      "uncert",
+      "aint"
+    ],
+    [
+      "prov",
+      "i"
+    ],
+    [
+      "merg",
+      "ing</w>"
+    ],
+    [
+      "g",
+      "o"
+    ],
+    [
+      "i",
+      "d"
+    ],
+    [
+      "m",
+      "ul"
+    ],
+    [
+      "ret",
+      "urn"
+    ],
+    [
+      "acro",
+      "ss</w>"
+    ],
+    [
+      "liquid",
+      "it"
+    ],
+    [
+      "liquidit",
+      "y,</w>"
+    ],
+    [
+      "risk",
+      ",</w>"
+    ],
+    [
+      "imp",
+      "act</w>"
+    ],
+    [
+      "en",
+      "ce</w>"
+    ],
+    [
+      "rate",
+      "s,</w>"
+    ],
+    [
+      "cost",
+      "s,</w>"
+    ],
+    [
+      "W",
+      "hen</w>"
+    ],
+    [
+      "p",
+      "u"
+    ],
+    [
+      "le",
+      "ve"
+    ],
+    [
+      "f",
+      "oc"
+    ],
+    [
+      "fir",
+      "m"
+    ],
+    [
+      "ing",
+      ",</w>"
+    ],
+    [
+      "con",
+      "tin"
+    ],
+    [
+      "s",
+      "oc"
+    ],
+    [
+      "at",
+      "ten"
+    ],
+    [
+      "atten",
+      "tion</w>"
+    ],
+    [
+      "grow",
+      "th"
+    ],
+    [
+      "lo",
+      "bal</w>"
+    ],
+    [
+      "m",
+      "a"
+    ],
+    [
+      "N",
+      "e"
+    ],
+    [
+      "Ne",
+      "ws</w>"
+    ],
+    [
+      "re",
+      "l"
+    ],
+    [
+      "o",
+      "w</w>"
+    ],
+    [
+      "the",
+      "y</w>"
+    ],
+    [
+      "infl",
+      "ation"
+    ],
+    [
+      "ex",
+      "ce"
+    ],
+    [
+      "an",
+      "n"
+    ],
+    [
+      "ann",
+      "oun"
+    ],
+    [
+      "en",
+      "hance</w>"
+    ],
+    [
+      "share",
+      "hol"
+    ],
+    [
+      "incre",
+      "ased</w>"
+    ],
+    [
+      "expo",
+      "sure</w>"
+    ],
+    [
+      "technolo",
+      "gy</w>"
+    ],
+    [
+      "to",
+      "ward</w>"
+    ],
+    [
+      "up",
+      "</w>"
+    ],
+    [
+      "investor",
+      "s.</w>"
+    ],
+    [
+      "d",
+      "ue</w>"
+    ],
+    [
+      "w",
+      "as</w>"
+    ],
+    [
+      "stron",
+      "g</w>"
+    ],
+    [
+      "de",
+      "man"
+    ],
+    [
+      "sh",
+      "if"
+    ],
+    [
+      "invest",
+      "ment"
+    ],
+    [
+      "d",
+      "s.</w>"
+    ],
+    [
+      "reven",
+      "u"
+    ],
+    [
+      "e",
+      "s.</w>"
+    ],
+    [
+      "intro",
+      "duced</w>"
+    ],
+    [
+      "str",
+      "ic"
+    ],
+    [
+      "re",
+      "quirement"
+    ],
+    [
+      "for",
+      "ward</w>"
+    ],
+    [
+      "loan",
+      "s</w>"
+    ],
+    [
+      "incre",
+      "ase"
+    ],
+    [
+      "iv",
+      "iden"
+    ],
+    [
+      "ividen",
+      "d</w>"
+    ],
+    [
+      "am",
+      "id</w>"
+    ],
+    [
+      "op",
+      "tim"
+    ],
+    [
+      "de",
+      "al</w>"
+    ],
+    [
+      "k",
+      "ing</w>"
+    ],
+    [
+      "s",
+      "overe"
+    ],
+    [
+      "long",
+      "-term</w>"
+    ],
+    [
+      "re",
+      "duced</w>"
+    ],
+    [
+      "expan",
+      "ded</w>"
+    ],
+    [
+      "d",
+      "igital</w>"
+    ],
+    [
+      "d",
+      "r"
+    ],
+    [
+      "d",
+      "uring</w>"
+    ],
+    [
+      "perio",
+      "d</w>"
+    ],
+    [
+      "vol",
+      "atilit"
+    ],
+    [
+      "stren",
+      "g"
+    ],
+    [
+      "tig",
+      "h"
+    ],
+    [
+      "condition",
+      "s.</w>"
+    ],
+    [
+      "st",
+      "an"
+    ],
+    [
+      "prof",
+      "it"
+    ],
+    [
+      "profit",
+      "abilit"
+    ],
+    [
+      "pen",
+      "sion</w>"
+    ],
+    [
+      "adju",
+      "sted</w>"
+    ],
+    [
+      "sy",
+      "ner"
+    ],
+    [
+      "der",
+      "s.</w>"
+    ],
+    [
+      "commit",
+      "te"
+    ],
+    [
+      "committe",
+      "e</w>"
+    ],
+    [
+      "rev",
+      "ie"
+    ],
+    [
+      "ser",
+      "v"
+    ],
+    [
+      "ac",
+      "tive</w>"
+    ],
+    [
+      "issu",
+      "ed</w>"
+    ],
+    [
+      "ener",
+      "gy</w>"
+    ],
+    [
+      "pro",
+      "j"
+    ],
+    [
+      "pay",
+      "ment</w>"
+    ],
+    [
+      "trans",
+      "ac"
+    ],
+    [
+      "z",
+      "e</w>"
+    ],
+    [
+      "asset",
+      "s.</w>"
+    ],
+    [
+      "t",
+      "urn"
+    ],
+    [
+      "a",
+      "u"
+    ],
+    [
+      "con",
+      "trol"
+    ],
+    [
+      "ti",
+      "-"
+    ],
+    [
+      "adop",
+      "ted</w>"
+    ],
+    [
+      "high",
+      "-"
+    ],
+    [
+      "fre",
+      "quen"
+    ],
+    [
+      "manage",
+      "ment</w>"
+    ],
+    [
+      "issu",
+      "ance</w>"
+    ],
+    [
+      "s",
+      "w"
+    ],
+    [
+      "n",
+      "ar"
+    ],
+    [
+      "metric",
+      "s</w>"
+    ],
+    [
+      "g",
+      "ain"
+    ],
+    [
+      "monet",
+      "ary</w>"
+    ],
+    [
+      "strateg",
+      "ic</w>"
+    ],
+    [
+      "g",
+      "ag"
+    ],
+    [
+      "c",
+      "ash</w>"
+    ],
+    [
+      "macro",
+      "economic</w>"
+    ],
+    [
+      "re",
+      "f"
+    ],
+    [
+      "non",
+      "-"
+    ],
+    [
+      "e",
+      "merging</w>"
+    ],
+    [
+      "market",
+      "s.</w>"
+    ],
+    [
+      "go",
+      "ti"
+    ],
+    [
+      "co",
+      "ven"
+    ],
+    [
+      "ad",
+      "v"
+    ],
+    [
+      "sh",
+      "or"
+    ],
+    [
+      "shor",
+      "t"
+    ],
+    [
+      "short",
+      "-term</w>"
+    ],
+    [
+      "i",
+      "b"
+    ],
+    [
+      "b",
+      "ased</w>"
+    ],
+    [
+      "g",
+      "e"
+    ],
+    [
+      "F",
+      "in"
+    ],
+    [
+      "sy",
+      "ste"
+    ],
+    [
+      "bet",
+      "we"
+    ],
+    [
+      "betwe",
+      "en</w>"
+    ],
+    [
+      "ment",
+      "s,</w>"
+    ],
+    [
+      "ative",
+      "s,</w>"
+    ],
+    [
+      "f",
+      "rame"
+    ],
+    [
+      "frame",
+      "wor"
+    ],
+    [
+      "framewor",
+      "ks</w>"
+    ],
+    [
+      "stre",
+      "ss</w>"
+    ],
+    [
+      "infl",
+      "u"
+    ],
+    [
+      "influ",
+      "ence</w>"
+    ],
+    [
+      "y",
+      "p"
+    ],
+    [
+      "leve",
+      "l"
+    ],
+    [
+      "ure",
+      ",</w>"
+    ],
+    [
+      "y",
+      "ing</w>"
+    ],
+    [
+      "aroun",
+      "d</w>"
+    ],
+    [
+      "con",
+      "f"
+    ],
+    [
+      "shap",
+      "e</w>"
+    ],
+    [
+      "financ",
+      "ing</w>"
+    ],
+    [
+      "ratio",
+      "s,</w>"
+    ],
+    [
+      "se",
+      "g"
+    ],
+    [
+      "indic",
+      "ators</w>"
+    ],
+    [
+      "o",
+      "ther</w>"
+    ],
+    [
+      "contin",
+      "ue</w>"
+    ],
+    [
+      "ance",
+      ",</w>"
+    ],
+    [
+      "inf",
+      "rastruct"
+    ],
+    [
+      "bo",
+      "th</w>"
+    ],
+    [
+      "en",
+      "v"
+    ],
+    [
+      "env",
+      "iron"
+    ],
+    [
+      "environ",
+      "ment"
+    ],
+    [
+      "soc",
+      "i"
+    ],
+    [
+      "soci",
+      "al,</w>"
+    ],
+    [
+      "strateg",
+      "ies,</w>"
+    ],
+    [
+      "growth",
+      ",</w>"
+    ],
+    [
+      "margin",
+      "s,</w>"
+    ],
+    [
+      "tion",
+      "s,</w>"
+    ],
+    [
+      "par",
+      "tic"
+    ],
+    [
+      "t",
+      "ly</w>"
+    ],
+    [
+      "be",
+      "en</w>"
+    ],
+    [
+      "ma",
+      "j"
+    ],
+    [
+      "maj",
+      "or</w>"
+    ],
+    [
+      "close",
+      "ly</w>"
+    ],
+    [
+      "lig",
+      "ht</w>"
+    ],
+    [
+      "e",
+      "spec"
+    ],
+    [
+      "espec",
+      "i"
+    ],
+    [
+      "especi",
+      "ally</w>"
+    ],
+    [
+      "g",
+      "lobal</w>"
+    ],
+    [
+      "h",
+      "ow</w>"
+    ],
+    [
+      "u",
+      "str"
+    ],
+    [
+      "ac",
+      "tiv"
+    ],
+    [
+      "ation",
+      "al</w>"
+    ],
+    [
+      "de",
+      "ve"
+    ],
+    [
+      "deve",
+      "lop"
+    ],
+    [
+      "develop",
+      "ments</w>"
+    ],
+    [
+      "‑",
+      "rel"
+    ],
+    [
+      "‑rel",
+      "ated</w>"
+    ],
+    [
+      "dec",
+      "ision"
+    ],
+    [
+      "ar",
+      "ter"
+    ],
+    [
+      "exce",
+      "e"
+    ],
+    [
+      "excee",
+      "ded</w>"
+    ],
+    [
+      "w",
+      "ide</w>"
+    ],
+    [
+      "bu",
+      "y"
+    ],
+    [
+      "sharehol",
+      "der</w>"
+    ],
+    [
+      "L",
+      "i"
+    ],
+    [
+      "Li",
+      "quid"
+    ],
+    [
+      "Liquid",
+      "ity</w>"
+    ],
+    [
+      "the",
+      "ir</w>"
+    ],
+    [
+      "stoc",
+      "ks</w>"
+    ],
+    [
+      "th",
+      "is</w>"
+    ],
+    [
+      "de",
+      "faul"
+    ],
+    [
+      "defaul",
+      "t</w>"
+    ],
+    [
+      "con",
+      "cer"
+    ],
+    [
+      "concer",
+      "n"
+    ],
+    [
+      "sector",
+      "s.</w>"
+    ],
+    [
+      "announ",
+      "ce"
+    ],
+    [
+      "st",
+      "ar"
+    ],
+    [
+      "star",
+      "t"
+    ],
+    [
+      "start",
+      "up</w>"
+    ],
+    [
+      "con",
+      "s"
+    ],
+    [
+      "u",
+      "m</w>"
+    ],
+    [
+      "cost",
+      "-"
+    ],
+    [
+      "c",
+      "ut"
+    ],
+    [
+      "su",
+      "b"
+    ],
+    [
+      "deman",
+      "d.</w>"
+    ],
+    [
+      "he",
+      "l"
+    ],
+    [
+      "hel",
+      "p"
+    ],
+    [
+      "help",
+      "ed</w>"
+    ],
+    [
+      "re",
+      "duce</w>"
+    ],
+    [
+      "overal",
+      "l</w>"
+    ],
+    [
+      "risk",
+      ".</w>"
+    ],
+    [
+      "investment",
+      "-"
+    ],
+    [
+      "investment-",
+      "grade</w>"
+    ],
+    [
+      "f",
+      "low</w>"
+    ],
+    [
+      "revenu",
+      "es.</w>"
+    ],
+    [
+      "stric",
+      "ter</w>"
+    ],
+    [
+      "ade",
+      "qu"
+    ],
+    [
+      "adequ",
+      "acy</w>"
+    ],
+    [
+      "con",
+      "trac"
+    ],
+    [
+      "t",
+      "s.</w>"
+    ],
+    [
+      "sheet",
+      ".</w>"
+    ],
+    [
+      "D",
+      "ividend</w>"
+    ],
+    [
+      "stoc",
+      "k</w>"
+    ],
+    [
+      "index",
+      "</w>"
+    ],
+    [
+      "al",
+      "l"
+    ],
+    [
+      "iv",
+      "ate</w>"
+    ],
+    [
+      "ben",
+      "ch"
+    ],
+    [
+      "R",
+      "e"
+    ],
+    [
+      "s",
+      "of"
+    ],
+    [
+      "mor",
+      "t"
+    ],
+    [
+      "tre",
+      "asur"
+    ],
+    [
+      "treasur",
+      "y</w>"
+    ],
+    [
+      "par",
+      "t"
+    ],
+    [
+      "optim",
+      "i"
+    ],
+    [
+      "optimi",
+      "z"
+    ],
+    [
+      "rece",
+      "iv"
+    ],
+    [
+      "receiv",
+      "ab"
+    ],
+    [
+      "t",
+      ".</w>"
+    ],
+    [
+      "secur",
+      "ities</w>"
+    ],
+    [
+      "s",
+      "a"
+    ],
+    [
+      "portfolio",
+      ".</w>"
+    ],
+    [
+      "ex",
+      "treme</w>"
+    ],
+    [
+      "streng",
+      "thened</w>"
+    ],
+    [
+      "rev",
+      "ised</w>"
+    ],
+    [
+      "under",
+      "w"
+    ],
+    [
+      "underw",
+      "r"
+    ],
+    [
+      "stan",
+      "d"
+    ],
+    [
+      "stand",
+      "ar"
+    ],
+    [
+      "profitabilit",
+      "y.</w>"
+    ],
+    [
+      "yiel",
+      "ds</w>"
+    ],
+    [
+      "govern",
+      "ment</w>"
+    ],
+    [
+      "per",
+      "formance</w>"
+    ],
+    [
+      "large-",
+      "cap"
+    ],
+    [
+      "syner",
+      "g"
+    ],
+    [
+      "op",
+      "port"
+    ],
+    [
+      "opport",
+      "un"
+    ],
+    [
+      "t",
+      "ar"
+    ],
+    [
+      "C",
+      "or"
+    ],
+    [
+      "Cor",
+      "porate</w>"
+    ],
+    [
+      "m",
+      "in"
+    ],
+    [
+      "der",
+      "iv"
+    ],
+    [
+      "re",
+      "ported</w>"
+    ],
+    [
+      "bu",
+      "sine"
+    ],
+    [
+      "revie",
+      "wed</w>"
+    ],
+    [
+      "pro",
+      "duct</w>"
+    ],
+    [
+      "ing",
+      ".</w>"
+    ],
+    [
+      "mode",
+      "l</w>"
+    ],
+    [
+      "conserv",
+      "ative</w>"
+    ],
+    [
+      "b",
+      "ro"
+    ],
+    [
+      "at",
+      "tract</w>"
+    ],
+    [
+      "bene",
+      "f"
+    ],
+    [
+      "tion",
+      "s.</w>"
+    ],
+    [
+      "sovere",
+      "ign</w>"
+    ],
+    [
+      "d",
+      "iver"
+    ],
+    [
+      "diver",
+      "sif"
+    ],
+    [
+      "diversif",
+      "ied</w>"
+    ],
+    [
+      "al",
+      "ter"
+    ],
+    [
+      "alter",
+      "n"
+    ],
+    [
+      "altern",
+      "ative</w>"
+    ],
+    [
+      "exper",
+      "ien"
+    ],
+    [
+      "experien",
+      "ced</w>"
+    ],
+    [
+      "f",
+      "l"
+    ],
+    [
+      "inter",
+      "n"
+    ],
+    [
+      "control",
+      "s.</w>"
+    ],
+    [
+      "imple",
+      "mented</w>"
+    ],
+    [
+      "an",
+      "ti-"
+    ],
+    [
+      "anti-",
+      "mone"
+    ],
+    [
+      "anti-mone",
+      "y</w>"
+    ],
+    [
+      "l",
+      "aunder"
+    ],
+    [
+      "sup",
+      "port</w>"
+    ],
+    [
+      "commo",
+      "d"
+    ],
+    [
+      "s",
+      "cenar"
+    ],
+    [
+      "scenar",
+      "io"
+    ],
+    [
+      "ap",
+      "p"
+    ],
+    [
+      "l",
+      "ay"
+    ],
+    [
+      "sw",
+      "ap"
+    ],
+    [
+      "transparen",
+      "c"
+    ],
+    [
+      "transparenc",
+      "y.</w>"
+    ],
+    [
+      "re",
+      "alloc"
+    ],
+    [
+      "fun",
+      "ds</w>"
+    ],
+    [
+      "nar",
+      "ro"
+    ],
+    [
+      "re",
+      "ac"
+    ],
+    [
+      "reac",
+      "ted</w>"
+    ],
+    [
+      "E",
+      "S"
+    ],
+    [
+      "ES",
+      "G"
+    ],
+    [
+      "ESG",
+      "</w>"
+    ],
+    [
+      "fac",
+      "tors</w>"
+    ],
+    [
+      "iti",
+      "z"
+    ],
+    [
+      "itiz",
+      "ation</w>"
+    ],
+    [
+      "off",
+      "</w>"
+    ],
+    [
+      "borro",
+      "w"
+    ],
+    [
+      "borrow",
+      "ing</w>"
+    ],
+    [
+      "d",
+      "iv"
+    ],
+    [
+      "div",
+      "ision</w>"
+    ],
+    [
+      "gain",
+      "s.</w>"
+    ],
+    [
+      "ac",
+      "commodative</w>"
+    ],
+    [
+      "c",
+      "u"
+    ],
+    [
+      "en",
+      "gage"
+    ],
+    [
+      "uncertaint",
+      "y.</w>"
+    ],
+    [
+      "a",
+      "ir"
+    ],
+    [
+      "c",
+      "ar"
+    ],
+    [
+      "de",
+      "lin"
+    ],
+    [
+      "delin",
+      "quen"
+    ],
+    [
+      "delinquen",
+      "cy</w>"
+    ],
+    [
+      "impo",
+      "sed</w>"
+    ],
+    [
+      "re",
+      "porting</w>"
+    ],
+    [
+      "high-",
+      "yield</w>"
+    ],
+    [
+      "re",
+      "struct"
+    ],
+    [
+      "restruct",
+      "uring</w>"
+    ],
+    [
+      "a",
+      "i"
+    ],
+    [
+      "ne",
+      "goti"
+    ],
+    [
+      "coven",
+      "ant</w>"
+    ],
+    [
+      "len",
+      "ders.</w>"
+    ],
+    [
+      "g",
+      "u"
+    ],
+    [
+      "gu",
+      "id"
+    ],
+    [
+      "guid",
+      "ance.</w>"
+    ],
+    [
+      "adv",
+      "is"
+    ],
+    [
+      "flex",
+      "ib"
+    ],
+    [
+      "flexib",
+      "ilit"
+    ],
+    [
+      "lin",
+      "ked</w>"
+    ],
+    [
+      "-",
+      "in"
+    ],
+    [
+      "Fin",
+      "anc"
+    ],
+    [
+      "Financ",
+      "ial</w>"
+    ],
+    [
+      "complex",
+      "</w>"
+    ],
+    [
+      "syste",
+      "m</w>"
+    ],
+    [
+      "in",
+      "str"
+    ],
+    [
+      "instr",
+      "u"
+    ],
+    [
+      "bon",
+      "ds,</w>"
+    ],
+    [
+      "e",
+      "ach</w>"
+    ],
+    [
+      "return",
+      "</w>"
+    ],
+    [
+      "In",
+      "stit"
+    ],
+    [
+      "Instit",
+      "ution"
+    ],
+    [
+      "Institution",
+      "al</w>"
+    ],
+    [
+      "fun",
+      "ds,</w>"
+    ],
+    [
+      "alloc",
+      "ate</w>"
+    ],
+    [
+      "return",
+      ",</w>"
+    ],
+    [
+      "volatilit",
+      "y,</w>"
+    ],
+    [
+      "ation",
+      ",</w>"
+    ],
+    [
+      "dis",
+      "coun"
+    ],
+    [
+      "discoun",
+      "t</w>"
+    ],
+    [
+      "valu",
+      "ation</w>"
+    ],
+    [
+      "mul",
+      "ti"
+    ],
+    [
+      "t",
+      "yp"
+    ],
+    [
+      "ic",
+      "ally</w>"
+    ],
+    [
+      "A",
+      "t</w>"
+    ],
+    [
+      "focu",
+      "s</w>"
+    ],
+    [
+      "struct",
+      "ure,</w>"
+    ],
+    [
+      "manag",
+      "ing</w>"
+    ],
+    [
+      "firm",
+      "’s</w>"
+    ],
+    [
+      "su",
+      "s</w>"
+    ],
+    [
+      "an",
+      "ts</w>"
+    ],
+    [
+      "manage",
+      "ment"
+    ],
+    [
+      "le",
+      "s,</w>"
+    ],
+    [
+      "inven",
+      "tor"
+    ],
+    [
+      "d",
+      "irectly</w>"
+    ],
+    [
+      "c",
+      "y"
+    ],
+    [
+      "ne",
+      "ed</w>"
+    ],
+    [
+      "v",
+      "ing</w>"
+    ],
+    [
+      "pro",
+      "gram"
+    ],
+    [
+      "sign",
+      "al</w>"
+    ],
+    [
+      "In",
+      "</w>"
+    ],
+    [
+      "perio",
+      "ds</w>"
+    ],
+    [
+      "firm",
+      "s</w>"
+    ],
+    [
+      "re",
+      "silien"
+    ],
+    [
+      "ce",
+      ",</w>"
+    ],
+    [
+      "len",
+      "g"
+    ],
+    [
+      "M",
+      "er"
+    ],
+    [
+      "Mer",
+      "gers</w>"
+    ],
+    [
+      "ac",
+      "quisitions</w>"
+    ],
+    [
+      "ition",
+      "al</w>"
+    ],
+    [
+      "inte",
+      "gration</w>"
+    ],
+    [
+      "B",
+      "an"
+    ],
+    [
+      "de",
+      "po"
+    ],
+    [
+      "me",
+      "asures</w>"
+    ],
+    [
+      "de",
+      "signed</w>"
+    ],
+    [
+      "stre",
+      "ss.</w>"
+    ],
+    [
+      "qu",
+      "alit"
+    ],
+    [
+      "D",
+      "igital</w>"
+    ],
+    [
+      "in",
+      "n"
+    ],
+    [
+      "inn",
+      "o"
+    ],
+    [
+      "inno",
+      "v"
+    ],
+    [
+      "innov",
+      "ations</w>"
+    ],
+    [
+      "in",
+      "stit"
+    ],
+    [
+      "instit",
+      "utions</w>"
+    ],
+    [
+      "a",
+      "v"
+    ],
+    [
+      "govern",
+      "ance,</w>"
+    ],
+    [
+      "infrastruct",
+      "ure.</w>"
+    ],
+    [
+      "F",
+      "or</w>"
+    ],
+    [
+      "investor",
+      "s,</w>"
+    ],
+    [
+      "environment",
+      "al,</w>"
+    ],
+    [
+      "the",
+      "matic</w>"
+    ],
+    [
+      "i",
+      "x"
+    ],
+    [
+      "ix",
+      "ed</w>"
+    ],
+    [
+      "seg",
+      "ments</w>"
+    ],
+    [
+      "E",
+      "quity</w>"
+    ],
+    [
+      "comp",
+      "etitive</w>"
+    ],
+    [
+      "curren",
+      "c"
+    ],
+    [
+      "com",
+      "b"
+    ],
+    [
+      "comb",
+      "in"
+    ],
+    [
+      "shif",
+      "ting</w>"
+    ],
+    [
+      "e",
+      "vol"
+    ],
+    [
+      "sign",
+      "s</w>"
+    ],
+    [
+      "s",
+      "low"
+    ],
+    [
+      "chang",
+      "ing</w>"
+    ],
+    [
+      "particular",
+      "ly</w>"
+    ],
+    [
+      "out",
+      "lo"
+    ],
+    [
+      "outlo",
+      "o"
+    ],
+    [
+      "outloo",
+      "k"
+    ],
+    [
+      "import",
+      "ant</w>"
+    ],
+    [
+      "fore",
+      "ign</w>"
+    ],
+    [
+      "market",
+      "s,</w>"
+    ],
+    [
+      "dome",
+      "stic</w>"
+    ],
+    [
+      "se",
+      "l"
+    ],
+    [
+      "f",
+      "is"
+    ],
+    [
+      "fis",
+      "c"
+    ],
+    [
+      "fisc",
+      "al</w>"
+    ],
+    [
+      "re",
+      "ports</w>"
+    ],
+    [
+      "he",
+      "ad"
+    ],
+    [
+      "compan",
+      "ies</w>"
+    ],
+    [
+      "be",
+      "hav"
+    ],
+    [
+      "behav",
+      "iour"
+    ],
+    [
+      "he",
+      "al"
+    ],
+    [
+      "heal",
+      "th"
+    ],
+    [
+      "ind",
+      "ustr"
+    ],
+    [
+      "man",
+      "u"
+    ],
+    [
+      "manu",
+      "fac"
+    ],
+    [
+      "manufac",
+      "t"
+    ],
+    [
+      "h",
+      "ou"
+    ],
+    [
+      "spen",
+      "ding</w>"
+    ],
+    [
+      "scr",
+      "utin"
+    ],
+    [
+      "level",
+      "s,</w>"
+    ],
+    [
+      "conf",
+      "iden"
+    ],
+    [
+      "tr",
+      "ig"
+    ],
+    [
+      "trig",
+      "ger</w>"
+    ],
+    [
+      "l",
+      "‑"
+    ],
+    [
+      "activ",
+      "ity</w>"
+    ],
+    [
+      "w",
+      "s,</w>"
+    ],
+    [
+      "struct",
+      "ural</w>"
+    ],
+    [
+      "non",
+      "‑"
+    ],
+    [
+      "cro",
+      "ss"
+    ],
+    [
+      "cross",
+      "‑"
+    ],
+    [
+      "cross‑",
+      "bor"
+    ],
+    [
+      "cross‑bor",
+      "der</w>"
+    ],
+    [
+      "analy",
+      "sed</w>"
+    ],
+    [
+      "high",
+      "light</w>"
+    ],
+    [
+      "tren",
+      "ds,</w>"
+    ],
+    [
+      "sin",
+      "ce</w>"
+    ],
+    [
+      "the",
+      "se</w>"
+    ],
+    [
+      "pu",
+      "b"
+    ],
+    [
+      "t",
+      "a"
+    ],
+    [
+      "ta",
+      "x"
+    ],
+    [
+      "gre",
+      "en"
+    ],
+    [
+      "sustain",
+      "abilit"
+    ],
+    [
+      "frequen",
+      "tly</w>"
+    ],
+    [
+      "sen",
+      "timent"
+    ],
+    [
+      "sentiment",
+      ",</w>"
+    ],
+    [
+      "coun",
+      "tr"
+    ],
+    [
+      "we",
+      "l"
+    ],
+    [
+      "wel",
+      "l</w>"
+    ],
+    [
+      "spec",
+      "ific</w>"
+    ],
+    [
+      "af",
+      "fecting</w>"
+    ],
+    [
+      "ne",
+      "ws</w>"
+    ],
+    [
+      "‑",
+      "office</w>"
+    ],
+    [
+      "finance",
+      "‑related</w>"
+    ],
+    [
+      "decision",
+      "s,</w>"
+    ]
+  ],
+  "special_tokens": {
+    "pad": "<pad>",
+    "unk": "<unk>",
+    "bos": "<bos>",
+    "eos": "<eos>"
+  }
+}
