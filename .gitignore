@@ -2,23 +2,21 @@
 __pycache__/
 *.pyc
 *.pyo
+*.py[cod]
 .pytest_cache/
 
 # Virtual envs
 venv/
 .venv/
+env/
 
-# Logs
-*.log
-logs/
+# Checkpoints (large binary model files - stored separately)
+checkpoints/
 
-# Large binary training artifacts
-checkpoints/*.pt
-*.pt
-
-# Raw data (not needed at runtime)
+# Training data (not needed at runtime)
 data/sft/
 data/sft_new/
+data/sft_expanded.jsonl
 data/raw/
 data/phase4/
 data/general_text/
@@ -26,18 +24,27 @@ data/slimpajama/
 data/gpt2_tokenizer/
 data/sft_*.jsonl
 data/sft_*.json
-!data/tokenizer.json
-!data/1984_clean.txt
-!data/tokenizer_1984.json
-!data/1984.txt
+
+# Tokenizer artifacts (keep only tokenizer.json)
+data/tokenizer_1984.json
+data/tokenizer_1984_bpe.json
+data/tokenizer_1984_bpe_converted.json
+data/tokenizer_1984_clean.txt
+data/1984_bytes_tokens.json
+data/1984_gpt2_tokens.json
+data/1984_tokens_u16.bin
+data/1984_clean.txt
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
 
 # IDE
 .vscode/
 .idea/
 *.swp
 
-# OS
-.DS_Store
-
-# Git
-.git/

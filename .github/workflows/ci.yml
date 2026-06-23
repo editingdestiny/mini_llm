@@ -1,0 +1,110 @@
+name: CI: Build & Push to GHCR
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository_owner }}/mini-llm
+  COMMIT_SHA: ${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,prefix=,suffix=,format=short
+            type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: true
+          sbom: true
+
+      - name: Output image URI
+        run: echo "image=${{ steps.meta.outputs.tags }}" >> $GITHUB_OUTPUT
+        id: image
+
+      - name: Run smoke test
+        run: |
+          echo "Checking image was pushed..."
+          echo "Image: ${{ steps.meta.outputs.tags }}"
+          docker pull ${{ steps.meta.outputs.tags }} --quiet
+          echo "✓ Image pulled successfully"
+
+      - name: Deploy to server
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          port: ${{ secrets.SERVER_PORT }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@sha256:${{ env.COMMIT_SHA }}"
+            
+            echo "🔄 Pulling new image..."
+            docker pull "$IMAGE"
+            
+            echo "🛑 Stopping old container..."
+            docker stop mini-llm || true
+            docker rm mini-llm || true
+            
+            echo "🚀 Starting new container..."
+            docker run -d \
+              --name mini-llm \
+              --restart unless-stopped \
+              --network traefik_network \
+              -p 8503:8502 \
+              -v /home/sd22750/mini-llm:/app \
+              "$IMAGE" \
+              streamlit run /app/streamlit_app.py --server.port 8502 --server.address 0.0.0.0
+            
+            echo "⏳ Waiting for startup..."
+            sleep 10
+            
+            echo "🧪 Smoke test..."
+            HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "✅ Smoke test passed (HTTP $HTTP_CODE)"
+            else
+              echo "❌ Smoke test failed (HTTP $HTTP_CODE)"
+              docker logs mini-llm --tail 20
+              exit 1
+            fi
+            
+            echo "✅ Deploy complete!"
