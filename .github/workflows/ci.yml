@@ -1,6 +1,3 @@
-# SDLC pipeline: build → push → deploy → smoke test
-name: CI: Build & Push to GHCR
-
 on:
   push:
     branches: [main]
@@ -66,7 +63,7 @@ jobs:
           echo "Checking image was pushed..."
           echo "Image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHA }}"
           docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHA }} --quiet
-          echo "✓ Image pulled successfully"
+          echo "Image pulled successfully"
 
   deploy:
     needs: build
@@ -91,33 +88,32 @@ jobs:
             export LATEST_TAG="$REGISTRY/$IMAGE_NAME:latest"
             MINI_LLM_DIR="/home/sd22750/mini-llm"
 
-            echo "🔄 Syncing docker-compose.yml from repo..."
-            # docker-compose.yml is already at the right path via host volume or git pull
+            echo "Syncing docker-compose.yml from repo..."
             cd "$MINI_LLM_DIR"
             git pull origin main
 
-            echo "🏷️  Tagging image as latest..."
+            echo "Tagging image as latest..."
             docker image tag "$IMAGE_TAG" "$LATEST_TAG"
             docker push "$LATEST_TAG"
 
-            echo "🛑 Stopping old container..."
+            echo "Stopping old container..."
             cd "$MINI_LLM_DIR"
             docker-compose down || true
 
-            echo "🚀 Starting new container with SHA image..."
+            echo "Starting new container with SHA image..."
             IMAGE="$IMAGE_TAG" docker-compose up -d
 
-            echo "⏳ Waiting for startup..."
+            echo "Waiting for startup..."
             sleep 15
 
-            echo "🧪 Smoke test..."
+            echo "Smoke test..."
             HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
             if [ "$HTTP_CODE" = "200" ]; then
-              echo "✅ Smoke test passed (HTTP $HTTP_CODE)"
+              echo "Smoke test passed (HTTP $HTTP_CODE)"
             else
-              echo "❌ Smoke test failed (HTTP $HTTP_CODE)"
+              echo "Smoke test failed (HTTP $HTTP_CODE)"
               docker-compose logs --tail 30
               exit 1
             fi
 
-            echo "✅ Deploy complete!"
+            echo "Deploy complete!"
