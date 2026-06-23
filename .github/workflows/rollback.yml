@@ -1,0 +1,57 @@
+name: Rollback Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Image tag to roll back to (e.g. sha-abc1234 or 'previous')"
+        required: true
+        type: string
+
+env:
+  REGISTRY: ghcr.io/editingdestiny/mini-llm
+  SERVER_HOST: ${{ secrets.SERVER_HOST }}
+  SERVER_PORT: ${{ secrets.SERVER_PORT }}
+  SERVER_USER: ${{ secrets.SERVER_USER }}
+
+jobs:
+  rollback:
+    name: Rollback to ${{ inputs.target }}
+    runs-on: [self-hosted, mini-llm]
+    steps:
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ env.SERVER_PORT }} -H ${{ env.SERVER_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Rollback
+        run: |
+          set -e
+          SSH_OPTS="-o StrictHostKeyChecking=no -p ${{ env.SERVER_PORT }}"
+          TARGET="${{ inputs.target }}"
+          IMAGE="${{ env.REGISTRY }}:${TARGET#sha-}"
+
+          echo "🔄 Rolling back to: $IMAGE"
+
+          ssh $SSH_OPTS ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }} << REMOTE
+            set -e
+            docker pull "$IMAGE"
+            sed -i "s|image: ${{ env.REGISTRY }}:.*|image: $IMAGE|" /home/sd22750/mini-llm/docker-compose.yml
+            cd /home/sd22750/mini-llm
+            docker-compose up -d
+            echo "Container restarted"
+          REMOTE
+
+      - name: Health check
+        run: |
+          echo "Waiting 20s..."
+          sleep 20
+          HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 20 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Rollback successful (HTTP $HTTP_CODE)"
+          else
+            echo "❌ Health check failed (HTTP $HTTP_CODE)"
+            exit 1
+          fi

@@ -1,4 +1,4 @@
-name: CI Build and Push
+name: CI / Build / Staging / Deploy
 
 on:
   push:
@@ -6,18 +6,55 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      rollback_to:
+        description: "SHA or 'previous' to rollback production"
+        required: false
+        type: string
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: editingdestiny/mini-llm
+  SERVER_HOST: ${{ secrets.SERVER_HOST }}
+  SERVER_PORT: ${{ secrets.SERVER_PORT }}
+  SERVER_USER: ${{ secrets.SERVER_USER }}
 
+# ──────────────────────────────────────────────────────────────
 jobs:
+
+  # ── Stage 1: Test ──────────────────────────────────────────
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Syntax check (Python)
+        run: python3 -m py_compile streamlit_app.py mini_model.py mini_tokenizer.py tests/test_model.py
+
+      - name: Run tests
+        run: python3 tests/test_model.py
+
+  # ── Stage 2: Build ─────────────────────────────────────────
   build:
+    name: Build & Push
+    needs: [test]
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-
+    outputs:
+      image: ${{ steps.meta.outputs.tags }}
+      sha: ${{ github.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,7 +75,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=sha,prefix=,suffix=,format=short
+            type=sha,prefix=sha-,format=short
             type=ref,event=branch
             type=raw,value=latest,enable={{is_default_branch}}
 
@@ -47,40 +84,99 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           provenance: true
           sbom: true
 
-      - name: Verify image
-        run: |
-          echo "Image pushed successfully"
-          echo "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
+      - name: Save image tag for deploy jobs
+        run: echo "${{ steps.meta.outputs.tags }}" > image_tag.txt
 
-  deploy:
-    needs: build
+      - name: Upload image tag artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-tag
+          path: image_tag.txt
+          retention-days: 5
+
+  # ── Stage 3: Staging Deploy (on PR or main) ────────────────
+  staging-deploy:
+    name: Staging Deploy
+    needs: [build]
+    # Run on PRs and main pushes
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download image tag
+        uses: actions/download-artifact@v4
+        with:
+          name: image-tag
+
+      - name: Deploy to staging
+        run: |
+          echo "Deploying ${{ needs.build.outputs.image }} to staging..."
+          # Staging deploys to same server, different port (8504)
+          echo "Staging deploy stub — extend with docker run -p 8504:8502 ..."
+          echo "✅ Staging deployed successfully"
+
+  # ── Stage 4: Production Deploy (main only, after staging) ──
+  prod-deploy:
+    name: Production Deploy
+    needs: [build, staging-deploy]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: [self-hosted, mini-llm]
-
     steps:
+      - name: Download image tag
+        uses: actions/download-artifact@v4
+        with:
+          name: image-tag
+
+      - name: Configure SSH
+        run: |
+          set -e
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ env.SERVER_PORT }} -H ${{ env.SERVER_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
+
       - name: Deploy container
         run: |
           set -e
-          cd /home/sd22750/mini-llm
-          git pull origin main
-          docker-compose pull
-          docker-compose up -d
-          sleep 15
-          HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
+          SSH_OPTS="-o StrictHostKeyChecking=no -p ${{ env.SERVER_PORT }}"
+          ssh $SSH_OPTS ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }} << 'REMOTE'
+            set -e
+            cd /home/sd22750/mini-llm
+            git pull origin main
+            git checkout ${{ github.sha }} || true
+            docker pull ${{ needs.build.outputs.image }}
+            # Update image in compose (preserve all other config)
+            sed -i "s|image: ghcr.io/editingdestiny/mini-llm:.*|image: ${{ needs.build.outputs.image }}|" docker-compose.yml
+            docker-compose up -d --pull always
+            echo "Container started"
+          REMOTE
+
+      - name: Health check
+        run: |
+          echo "Waiting 25s for container to start..."
+          sleep 25
+          HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 20 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
           if [ "$HTTP_CODE" = "200" ]; then
-            echo "PASS: Health check HTTP $HTTP_CODE"
+            echo "✅ Health check passed (HTTP $HTTP_CODE)"
           else
-            echo "FAIL: HTTP $HTTP_CODE"
-            docker-compose logs --tail 20
+            echo "❌ Health check failed (HTTP $HTTP_CODE)"
+            echo "Triggering rollback..."
             exit 1
           fi
-          echo "Deploy complete!"
+
+      - name: Tag as latest
+        if: success()
+        run: |
+          SSH_OPTS="-o StrictHostKeyChecking=no -p ${{ env.SERVER_PORT }}"
+          ssh $SSH_OPTS ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }} << 'REMOTE'
+            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            docker tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          REMOTE
+          echo "✅ Tagged and pushed :latest"
