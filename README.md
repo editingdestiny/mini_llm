@@ -42,3 +42,4 @@ python continue_train.py --checkpoint checkpoints/sft_final.pt
 python train_fresh.py
 ```
 
+# trigger
