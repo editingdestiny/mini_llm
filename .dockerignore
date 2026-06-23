@@ -1,0 +1,17 @@
+__pycache__/
+.git/
+venv/
+*.log
+playground/
+sec-edgar-filings/
+
+# Training data (not needed at runtime)
+data/sft/
+data/sft_new/
+data/raw/
+data/phase4/
+data/general_text/
+data/slimpajama/
+data/gpt2_tokenizer/
+
+# Most checkpoints (only needed ones added via Dockerfile)

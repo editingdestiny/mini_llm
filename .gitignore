@@ -1,0 +1,43 @@
+# Bytecode
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Virtual envs
+venv/
+.venv/
+
+# Logs
+*.log
+logs/
+
+# Large binary training artifacts
+checkpoints/*.pt
+*.pt
+
+# Raw data (not needed at runtime)
+data/sft/
+data/sft_new/
+data/raw/
+data/phase4/
+data/general_text/
+data/slimpajama/
+data/gpt2_tokenizer/
+data/sft_*.jsonl
+data/sft_*.json
+!data/tokenizer.json
+!data/1984_clean.txt
+!data/tokenizer_1984.json
+!data/1984.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# Git
+.git/
