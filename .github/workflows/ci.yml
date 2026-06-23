@@ -33,4 +33,36 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/editingdestiny/mini-llm:${{ github.sha }}
+          tags: |
+            ghcr.io/editingdestiny/mini-llm:${{ github.sha }}
+            ghcr.io/editingdestiny/mini-llm:latest
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          port: ${{ secrets.SERVER_PORT }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            MINI_LLM_DIR="/home/sd22750/mini-llm"
+            cd "$MINI_LLM_DIR"
+            git pull origin main
+            docker-compose pull
+            docker-compose up -d
+            sleep 15
+            HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "PASS: Health check HTTP $HTTP_CODE"
+            else
+              echo "FAIL: HTTP $HTTP_CODE"
+              docker-compose logs --tail 20
+              exit 1
+            fi
