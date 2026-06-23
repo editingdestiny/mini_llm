@@ -1,0 +1,25 @@
+# Staging deployment — runs on port 8504, visible at mini-llm-staging.sd-ai.co.uk
+services:
+  mini-llm-staging:
+    image: ghcr.io/editingdestiny/mini-llm:latest
+    container_name: mini-llm-staging
+    networks:
+      - traefik_network
+    volumes:
+      - ./checkpoints:/app/checkpoints:ro
+      - ./data/tokenizer.json:/app/data/tokenizer.json:ro
+    ports:
+      - "8504:8502"
+    command: streamlit run streamlit_app.py --server.port 8502 --server.address 0.0.0.0
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mini-llm-staging.rule=Host(`mini-llm-staging.sd-ai.co.uk`)"
+      - "traefik.http.routers.mini-llm-staging.entrypoints=websecure"
+      - "traefik.http.routers.mini-llm-staging.tls.certresolver=letsencrypt"
+      - "traefik.http.services.mini-llm-staging.loadbalancer.server.port=8502"
+    mem_limit: 4g
+
+networks:
+  traefik_network:
+    external: true

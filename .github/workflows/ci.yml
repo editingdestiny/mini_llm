@@ -105,21 +105,48 @@ jobs:
   staging-deploy:
     name: Staging Deploy
     needs: [build]
-    # Run on PRs and main pushes
     if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, mini-llm]
     steps:
       - name: Download image tag
         uses: actions/download-artifact@v4
         with:
           name: image-tag
 
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p ${{ env.SERVER_PORT }} -H ${{ env.SERVER_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
+
       - name: Deploy to staging
         run: |
-          echo "Deploying ${{ needs.build.outputs.image }} to staging..."
-          # Staging deploys to same server, different port (8504)
-          echo "Staging deploy stub — extend with docker run -p 8504:8502 ..."
-          echo "✅ Staging deployed successfully"
+          set -e
+          SSH_OPTS="-o StrictHostKeyChecking=no -p ${{ env.SERVER_PORT }}"
+          IMAGE=$(cat image_tag.txt | tr -d ' \n')
+
+          ssh $SSH_OPTS ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }} << 'REMOTE'
+            set -e
+            cd /home/sd22750/mini-llm
+            git fetch origin
+            git checkout ${{ github.sha }} 2>/dev/null || git checkout origin/main
+            docker pull "$IMAGE"
+            sed -i "s|image: ghcr.io/editingdestiny/mini-llm:.*|image: $IMAGE|" docker-compose.staging.yml
+            docker-compose -f docker-compose.staging.yml up -d --pull always
+            echo "Staging container started on port 8504"
+          REMOTE
+
+      - name: Staging health check
+        run: |
+          echo "Waiting 20s for staging to start..."
+          sleep 20
+          HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm-staging.sd-ai.co.uk 2>/dev/null || echo "000")
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Staging health check passed (HTTP $HTTP_CODE)"
+          else
+            echo "⚠️  Staging health check returned HTTP $HTTP_CODE (may need DNS to propagate)"
+          fi
 
   # ── Stage 4: Production Deploy (main only, after staging) ──
   prod-deploy:
