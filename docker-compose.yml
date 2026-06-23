@@ -1,14 +1,15 @@
 services:
   mini-llm:
-    image: mini-llm:fixed4
+    image: ghcr.io/editingdestiny/mini-llm:latest
     container_name: mini-llm
     networks:
       - traefik_network
     volumes:
-      - /home/sd22750/mini-llm:/app
+      - ./checkpoints:/app/checkpoints:ro
+      - ./data/tokenizer.json:/app/data/tokenizer.json:ro
     ports:
       - "8503:8502"
-    command: streamlit run /app/streamlit_app.py --server.port 8502 --server.address 0.0.0.0
+    command: streamlit run streamlit_app.py --server.port 8502 --server.address 0.0.0.0
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -16,6 +17,7 @@ services:
       - "traefik.http.routers.mini-llm.entrypoints=websecure"
       - "traefik.http.routers.mini-llm.tls.certresolver=letsencrypt"
       - "traefik.http.services.mini-llm.loadbalancer.server.port=8502"
+    mem_limit: 4g
 
 networks:
   traefik_network:
