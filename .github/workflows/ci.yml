@@ -64,7 +64,7 @@ jobs:
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: [self-hosted]
+    runs-on: [self-hosted, mini-llm]
 
     steps:
       - name: Deploy container
@@ -72,7 +72,6 @@ jobs:
           set -e
           cd /home/sd22750/mini-llm
           git pull origin main
-          docker-compose down || true
           docker-compose pull
           docker-compose up -d
           sleep 15
