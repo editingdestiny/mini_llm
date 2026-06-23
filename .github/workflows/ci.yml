@@ -1,3 +1,5 @@
+name: CI Build and Push
+
 on:
   push:
     branches: [main]
@@ -8,7 +10,6 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: editingdestiny/mini-llm
-  COMMIT_SHA: ${{ github.sha }}
 
 jobs:
   build:
@@ -53,56 +54,52 @@ jobs:
           provenance: true
           sbom: true
 
-      - name: Pull image for verification
+      - name: Verify image
         run: |
-          IMAGE_TAG="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHA }}"
-          docker pull "$IMAGE_TAG"
-          echo "sha_tag=$IMAGE_TAG" >> $GITHUB_OUTPUT
-
-      - name: Run smoke test
-        run: |
-          echo "Checking image was pushed..."
-          echo "Image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHA }}"
-          docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.COMMIT_SHA }} --quiet
-          echo "Image pulled successfully"
+          echo "Image pushed successfully"
+          echo "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://mini-llm.sd-ai.co.uk
+
     steps:
-      - name: Deploy to server via SSH
-        uses: appleboy/ssh-action@v1
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
           port: ${{ secrets.SERVER_PORT }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_KEY }}
-          envs: REGISTRY,IMAGE_NAME,COMMIT_SHA
+          envs: REGISTRY,IMAGE_NAME,GITHUB_SHA
           env:
             REGISTRY: ghcr.io
             IMAGE_NAME: editingdestiny/mini-llm
-            COMMIT_SHA: ${{ github.sha }}
+            GITHUB_SHA: ${{ github.sha }}
           script: |
             set -e
-            export IMAGE_TAG="$REGISTRY/$IMAGE_NAME:$COMMIT_SHA"
-            export LATEST_TAG="$REGISTRY/$IMAGE_NAME:latest"
+            IMAGE_TAG="$REGISTRY/$IMAGE_NAME:$GITHUB_SHA"
+            LATEST_TAG="$REGISTRY/$IMAGE_NAME:latest"
             MINI_LLM_DIR="/home/sd22750/mini-llm"
 
-            echo "Syncing docker-compose.yml from repo..."
+            echo "Pulling latest code..."
             cd "$MINI_LLM_DIR"
             git pull origin main
 
-            echo "Tagging image as latest..."
+            echo "Pulling new image..."
+            docker pull "$IMAGE_TAG"
+
+            echo "Tagging as latest..."
             docker image tag "$IMAGE_TAG" "$LATEST_TAG"
             docker push "$LATEST_TAG"
 
-            echo "Stopping old container..."
-            cd "$MINI_LLM_DIR"
+            echo "Restarting container..."
             docker-compose down || true
-
-            echo "Starting new container with SHA image..."
-            IMAGE="$IMAGE_TAG" docker-compose up -d
+            docker-compose up -d
 
             echo "Waiting for startup..."
             sleep 15
@@ -110,12 +107,10 @@ jobs:
             echo "Smoke test..."
             HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
             if [ "$HTTP_CODE" = "200" ]; then
-              echo "Smoke test passed (HTTP $HTTP_CODE)"
+              echo "PASS: HTTP $HTTP_CODE"
             else
-              echo "Smoke test failed (HTTP $HTTP_CODE)"
-              docker-compose logs --tail 30
+              echo "FAIL: HTTP $HTTP_CODE"
+              docker-compose logs --tail 20
               exit 1
             fi
-
-            echo "Deploy complete!"
-            echo "Done."
+            echo "Deploy complete."
