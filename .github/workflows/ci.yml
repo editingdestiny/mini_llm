@@ -1,3 +1,4 @@
+# SDLC pipeline: build → push → deploy → smoke test
 name: CI: Build & Push to GHCR
 
 on:
