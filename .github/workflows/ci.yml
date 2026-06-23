@@ -7,6 +7,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: editingdestiny/mini-llm
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,9 +28,19 @@ jobs:
       - name: Log in to GHCR
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
+          registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,prefix=,suffix=,format=short
+            type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push
         uses: docker/build-push-action@v5
@@ -34,35 +48,39 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/editingdestiny/mini-llm:${{ github.sha }}
-            ghcr.io/editingdestiny/mini-llm:latest
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: true
+          sbom: true
+
+      - name: Verify image
+        run: |
+          echo "Image pushed successfully"
+          echo "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, mini-llm]
 
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          port: ${{ secrets.SERVER_PORT }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            set -e
-            MINI_LLM_DIR="/home/sd22750/mini-llm"
-            cd "$MINI_LLM_DIR"
-            git pull origin main
-            docker-compose pull
-            docker-compose up -d
-            sleep 15
-            HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
-            if [ "$HTTP_CODE" = "200" ]; then
-              echo "PASS: Health check HTTP $HTTP_CODE"
-            else
-              echo "FAIL: HTTP $HTTP_CODE"
-              docker-compose logs --tail 20
-              exit 1
-            fi
+      - name: Deploy container
+        run: |
+          set -e
+          cd /home/sd22750/mini-llm
+          git pull origin main
+          docker-compose pull
+          docker-compose up -d
+          sleep 15
+          HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 15 https://mini-llm.sd-ai.co.uk 2>/dev/null || echo "000")
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "PASS: Health check HTTP $HTTP_CODE"
+          else
+            echo "FAIL: HTTP $HTTP_CODE"
+            docker-compose logs --tail 20
+            exit 1
+          fi
+          echo "Deploy complete!"
